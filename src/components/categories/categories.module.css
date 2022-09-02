@@ -1,0 +1,65 @@
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    border: 0.2rem solid #10221b;
+    color: #10221b;
+    cursor: pointer;
+    background: none;
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+  }
+  
+  .btn:hover {
+    background: #10221b;
+    color: #fff;
+  }
+
+  .category h1{
+    margin: 5rem;
+    text-align: center;
+  }
+
+.category .box-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 8rem 5rem;
+    gap: 1.5rem;
+  }
+  
+  .category .box-container .box {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .category .box-container .box img {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .category .box-container .box h3 {
+    font-size: 2rem;
+    color: #219150;
+  }
+  
+  .category .box-container .box p {
+    font-size: 1.5rem;
+    color: #10221b;
+    padding: 1rem 0;
+    line-height: 2;
+  }
+
+  @media screen and (max-width: 940px) {
+    .category .box-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      top: 100vh;
+      left: 0;
+      /* position: absolute; */
+      justify-content: flex-start;
+      margin-left: 0.6rem;
+    }
+  }
