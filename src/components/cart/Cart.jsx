@@ -2,6 +2,10 @@
 import { useCart } from 'react-use-cart';
 import './Cart.css';
 const Cart = () => {
+    
+    const proceeditems=()=>{
+        console.log("Item proceeded"); //that will go to checkout page (will be implemented)
+    } 
 
     const { 
         isEmpty,
