@@ -48,6 +48,9 @@ const Cart = () => {
                         <button onClick={() => emptyCart()} className="btn btn-outline-danger">Clear All</button>
                         <h3>Total Price: ${cartTotal}</h3>
                     </div>
+                    <div className=" text-center">
+                        <button onClick={()=>proceeditems()} className="btn success">Checkout To Proceed</button>
+                    </div>
                 </div>
             </div>
         </div>
