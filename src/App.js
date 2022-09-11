@@ -5,6 +5,7 @@ import About from "./components/about/about";
 import Recommend from "./components/Recommendations/recommendations";
 import Reviews from "./components/reviews/reviews";
 import Footer from "./components/footer/footer";
+import Auth from "./components/auth/auth";
 // import Shop from "./components/shop/shop"
 // // import ShopItem from "./components/shop/shopItem";
 import ScrollReveal from "scrollreveal";
@@ -29,13 +30,14 @@ const App = (props) => {
 
   return (
     <div>
-      <Navbar />
+      <Auth />
+      {/* <Navbar />
       <Hero />
       <Categories />
       <About />
       <Recommend />
       <Reviews />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
