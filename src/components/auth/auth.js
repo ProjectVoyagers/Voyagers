@@ -5,7 +5,7 @@ import styles from './auth.module.css';
 import img1 from "../../Assets/image1.png"
 import img2 from "../../Assets/image2.png"
 import img3 from "../../Assets/image3.png"
-import logo from "../../Assets/logo1.svg"
+import logo from "../../Assets/logo.png"
 
 
 const Auth = (props) => {
@@ -111,7 +111,7 @@ const Auth = (props) => {
             <form action="index.html" autocomplete="off" class={styles['sign-up-form']}>
               <div class={styles.logo}>
                 <img src={logo} alt="easyclass" />
-                <h4>Voyagers</h4>
+                <h4>easyclass</h4>
               </div>
 
               <div class={styles.heading}>
