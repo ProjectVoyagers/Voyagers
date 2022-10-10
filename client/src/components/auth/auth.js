@@ -80,6 +80,9 @@ const Auth = (props) => {
                     value={enteredEmail}
                     onChange={emailChangeHandler}
                     onBlur={validateEmailHandler}
+                    onFocus= {() => {
+                        this.classList.add("active");
+                    }}
                     required
                   />
                   <label>Name</label>
