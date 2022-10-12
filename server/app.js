@@ -8,6 +8,7 @@ dotenv.config();
 
 // internal imports
 const {notFoundHandler, errorHandler} = require("./middlewares/common/errorHandler");
+const { Router } = require("express");
 
 // request parsers
 app.use(express.urlencoded({extended: true}));
@@ -19,7 +20,9 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 
 //routing setup
 
-
+app.get('/', (req,res) => {
+    res.json("Hello World");
+})
 
 // error handling 
 
