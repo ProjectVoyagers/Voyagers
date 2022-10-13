@@ -4,7 +4,7 @@ import {useNavigate } from "react-router-dom";
 import "./login.css"
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [usernameORemail, setusernameORemail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
@@ -12,10 +12,17 @@ const Login = () => {
   const Auth = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/login", {
-        email: email,
-        password: password,
-      });
+      await axios({
+        method: 'post',
+        url: 'http://localhost:5000/login',
+        data: {
+          usernameORemail: usernameORemail,
+          password: password,
+        },
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      })
       navigate("/");
     } catch (error) {
       if (error.response) {
@@ -38,9 +45,9 @@ const Login = () => {
                     <input
                       type="text"
                       className="input"
-                      placeholder="Username"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Username OR Email"
+                      value={usernameORemail}
+                      onChange={(e) => setusernameORemail(e.target.value)}
                     />
                   </div>
                 </div>
