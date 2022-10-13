@@ -1,4 +1,4 @@
-import db from "../config/dbConfig"
+const db = require("../config/dbConfig");
 
 module.exports.getAllUsers = async(count) => {
     try {
@@ -30,12 +30,12 @@ module.exports.getUser = async(emailOrHandle) => {
     }
   }
   
-  module.exports.addUser = async(handle, email, firstName, lastName, password) => {
+  module.exports.addUser = async(username, email, password) => {
     try {
       const response = await new Promise((resolve, reject) => {
         db.execute(
-          'INSERT INTO `user` (`handle`, `email`, `password`, `first_name`, `last_name`) VALUES (?, ?, ?, ?, ?)',
-          [handle, email, password, firstName, lastName], 
+          'INSERT INTO `users` (`username`, `email`, `password`) VALUES (?, ?, ?)',
+          [username, email, password], 
           (err, results) => {
           if (err) {
               reject(err.message);

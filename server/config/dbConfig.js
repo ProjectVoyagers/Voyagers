@@ -17,4 +17,4 @@ db.connect((err) => {
     console.log('db authorized: ' + db.authorized);
 })
 
-module.exports = {db};
+module.exports = db;

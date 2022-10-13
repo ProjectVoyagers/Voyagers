@@ -9,7 +9,7 @@ function notFoundHandler(req,res,next) {
 
 // default error handler
 function errorHandler(err, req, res, next) {
-    next(createError(500, `There was a server side error!`));
+    next(createError(500, err));
 }
 
 module.exports = {
