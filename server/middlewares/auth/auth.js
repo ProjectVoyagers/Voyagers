@@ -12,12 +12,16 @@ module.exports.register = async(req,res) => {
     try{
         const hashPassword = bcrypt.hashSync(password,salt_rounds);
         const response = await addUser(name,email,hashPassword);
-        if(response) return res.json({message: response});
-
+        if(response) {
+            // console.log(response)
+            console.log(response.status)
+            return res.status(200).json({message: response,err: ''});
+        }
+        
     return res.status(400).json({error :"Invalid entry"});
     } catch (error) {
-        console.log(error);
-        res.status(400).json({error: error});
+        // console.log(error);
+        return res.status(400).send(error);
   }
 }
 
