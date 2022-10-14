@@ -22,10 +22,10 @@ const App = (props) => {
         </Route>
         <Route path="/travelPackages" element={<TravelPackages/>}>
         </Route>
-        <Route exact path="/shop" element={<Shop/>}>
-        </Route>
-        {/* <Route path="/Shop" element={<Shop/>}>
+        {/* <Route exact path="/shop" element={<Shop/>}>
         </Route> */}
+        <Route path="/Shop" element={<Shop/>}>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
