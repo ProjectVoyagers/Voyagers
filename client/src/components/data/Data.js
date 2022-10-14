@@ -1,7 +1,7 @@
-import imgOne from '../../Assets/images/blanket.png';
-import imgTwo from '../../Assets/images/bags and kits.png';
-import imgThree from '../../Assets/images/pillow.png';
-import imgFour from '../../Assets/images/umbrella.png';
+import imgOne from '../../Assets/blanket.png';
+import imgTwo from '../../Assets/bags and kits.png';
+import imgThree from '../../Assets/pillow.png';
+import imgFour from '../../Assets/umbrella.png';
 
 
 const data={
