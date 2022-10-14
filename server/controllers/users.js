@@ -14,11 +14,11 @@ module.exports.getAllUsers = async(count) => {
         console.log(error);
       }
 }
-module.exports.getUser = async(emailOrHandle) => {
+module.exports.getUser = async(usernameORemail) => {
     try {
       const user = await new Promise((resolve, reject) => {
-        db.execute('SELECT * FROM `user` WHERE `handle`=? OR `email`=?',
-        [emailOrHandle, emailOrHandle],
+        db.execute('SELECT * FROM `users` WHERE `username`=? OR `email`=?',
+        [usernameORemail, usernameORemail],
         (err, results) => {
           if(err) reject (err.message);
           resolve(results);
@@ -28,7 +28,7 @@ module.exports.getUser = async(emailOrHandle) => {
     } catch (error) {
       throw error;
     }
-  }
+}
   
   module.exports.addUser = async(username, email, password) => {
     try {

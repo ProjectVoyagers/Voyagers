@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const db = require("./config/dbConfig");
 
-const {register} = require("./middlewares/auth/auth");
+const {register, login} = require("./middlewares/auth/auth");
 const {bypassCORS} = require("./middlewares/setup");
 
 const app = express();
@@ -24,6 +24,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 //routing setup
 
 app.post("/register",bypassCORS, register);
+app.post("/login",bypassCORS, login);
 
 // error handling 
 
