@@ -48,3 +48,22 @@ module.exports.getUser = async(usernameORemail) => {
       throw error;
     }
   }
+
+module.exports.fetchAllPackges = async(count) => {
+  try{
+    const response = await new Promise((resolve,reject) => {
+      db.execute(
+        'SELECT * FROM `package` LIMIT=?',
+        [count],
+        (err, results) => {
+          if(err) {
+            reject(err.message);
+          }
+          resolve(results);
+        })
+    });
+    return response; 
+  } catch(error) {
+     throw error;
+  }
+}

@@ -107,6 +107,7 @@ const Register = () => {
                       className="input"
                       placeholder="Email"
                       value={email}
+                      autoComplete="off"
                       onChange={checkEmail}
                     />
                   </div>
@@ -119,6 +120,7 @@ const Register = () => {
                       type="password"
                       className="input"
                       placeholder="********"
+                      autoComplete="off"
                       value={password}
                       onChange={checkPass}
                     />

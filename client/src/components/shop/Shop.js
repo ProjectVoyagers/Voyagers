@@ -6,7 +6,7 @@ import data from "../data/Data";
 import Cart from "../cart/Cart";
 
 
-export const Shop = () => {
+const Shop = () => {
  
    
     return (
@@ -30,3 +30,5 @@ export const Shop = () => {
         </>
     );
 };
+
+export default Shop;
