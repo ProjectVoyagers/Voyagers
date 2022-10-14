@@ -1,61 +1,39 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Destination1 from "../../Assets/Destination1.png";
-import Destination2 from "../../Assets/Destination2.png";
-import Destination3 from "../../Assets/Destination3.png";
-import Destination4 from "../../Assets/Destination4.png";
-import Destination5 from "../../Assets/Destination5.png";
-import Destination6 from "../../Assets/Destination6.png";
+// import Destination1 from "../../Assets/Destination1.png";
+// import Destination2 from "../../Assets/Destination2.png";
+// import Destination3 from "../../Assets/Destination3.png";
+// import Destination4 from "../../Assets/Destination4.png";
+// import Destination5 from "../../Assets/Destination5.png";
+// import Destination6 from "../../Assets/Destination6.png";
 import info1 from "../../Assets/info1.png";
 import info2 from "../../Assets/info2.png";
 import info3 from "../../Assets/info3.png";
 
 export default function TravelPackages() {
-  const data = [
-    {
-      image: Destination1,
-      title: "Singapore",
-      subTitle: "Singapore, officialy the Republic of Singapore, is a very nice city ",
-      cost: "38,800",
-      duration: "Approx 2 night trip",
-    },
-    {
-      image: Destination2,
-      title: "Thailand",
-      subTitle: "Thailand is a Southeast Asia country. It's known for",
-      cost: "54,200",
-      duration: "Approx 2 night trip",
-    },
-    {
-      image: Destination3,
-      title: "Paris",
-      subTitle: "Paris, France's capital, is a major European city and a",
-      cost: "45,500",
-      duration: "Approx 2 night trip",
-    },
-    {
-      image: Destination4,
-      title: "New Zealand",
-      subTitle: "New Zealand is an island country in the",
-      cost: "24,100",
-      duration: "Approx 1 night trip",
-    },
-    {
-      image: Destination5,
-      title: "Bora Bora",
-      subTitle: "Bora Bora is a small South Pacific island northwest of",
-      cost: "95,400",
-      duration: "Approx 2 night 2 day trip",
-    },
-    {
-      image: Destination6,
-      title: "London",
-      subTitle: "London, the capital of England and the United",
-      cost: "38800",
-      duration: "Approx 3 night 2 day trip",
-    },
-  ];
 
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async() => {
+      await axios({
+        method: 'get',
+        url: "http://localhost:5000/fetchAllPackages",
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        responseType: 'json',
+      }).then((response) => {
+        setData(response.data.data);
+        console.log(response.data.data);
+      }).catch((err) => {
+        console.log(err);
+      })
+    }
+    fetchData();
+  },[]);
+  
   const packages = [
     "The Weekend Break",
     "The Package Holiday",
