@@ -4,12 +4,11 @@ dotenv.config();
 const {fetchAllPackges} = require("../../controllers/users")
 
 module.exports.getPackages = async(req,res) => {
-    const {count} = req.body;
-    await fetchAllPackges(count)
+    await fetchAllPackges()
     .then((data) => {
-        console.log(data);
+        // console.log(data);
         return res.json({data: data});
     }).catch((error) => {
-        return res.status(200).send({error: error});
+        return res.status(400).send({error: error});
     })
 }

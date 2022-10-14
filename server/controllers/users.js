@@ -53,8 +53,7 @@ module.exports.fetchAllPackges = async(count) => {
   try{
     const response = await new Promise((resolve,reject) => {
       db.execute(
-        'SELECT * FROM `package` LIMIT=?',
-        [count],
+        'SELECT * FROM `travel_packages_data`',
         (err, results) => {
           if(err) {
             reject(err.message);

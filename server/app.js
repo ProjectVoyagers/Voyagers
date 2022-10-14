@@ -12,6 +12,7 @@ dotenv.config();
 // internal imports
 const {notFoundHandler, errorHandler} = require("./middlewares/common/errorHandler");
 const { Router } = require("express");
+const { getPackages } = require("./middlewares/packages/FetchPackages");
 
 // request parsers
 app.use(express.urlencoded({extended: true}));
@@ -25,7 +26,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 
 app.post("/register",bypassCORS, register);
 app.post("/login",bypassCORS, login);
-app.post("/fetchAllPackages", bypassCORS, fetchAllPackages);
+app.get("/fetchAllPackages", bypassCORS, getPackages);
 
 // error handling 
 
