@@ -1,7 +1,7 @@
 import imgOne from '../../Assets/blanket.png';
 import imgTwo from '../../Assets/bags and kits.png';
 import imgThree from '../../Assets/pillow.png';
-import imgFour from '../../Assets/umbrella.png';
+import imgFour from '../../Assets/umbrella.jpeg';
 
 
 const data={
