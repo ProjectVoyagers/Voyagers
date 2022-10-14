@@ -5,8 +5,11 @@ import "./Register.css"
 
 const Register = () => {
   const [name, setName] = useState("");
+  const [validName, setvalidName] = useState('');
   const [email, setEmail] = useState("");
+  const [validMail, setvalidMail] = useState('');
   const [password, setPassword] = useState("");
+  const [validPass, setvalidPass] = useState('');
   const [confPassword, setConfPassword] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
@@ -29,11 +32,52 @@ const Register = () => {
       })
       navigate("/");
     } catch (error) {
-      if (error.response) {
-        setMsg(error.response.data.msg);
-      }
+      console.log(error.response.data);
+      setvalidName('Username already exists!');
     }
   };
+
+  const regex = /\S+@\S+\.\S+/;
+  const checkEmail = (e) =>{
+    setEmail(e.target.value);
+    if(regex.test(email)===false) {
+      setvalidMail('Please enter valid Email')
+    } else {
+      setvalidMail('');
+      return true;
+    }
+  }
+
+
+  const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  const checkPass = (e) =>{
+    e.preventDefault();
+    setPassword(e.target.value);
+    if(e.target.value === confPassword){
+      setMsg("");
+    } else{
+      setMsg('Passwords do not match!');
+    }
+    if(passRegex.test(password)){
+      setvalidPass('Please enter a valid password!');
+    } else{
+      setvalidPass('');
+      return true;
+    }
+  }
+
+  const checkConfirmPass = (e) => {
+    setConfPassword(e.target.value);
+    if(e.target.value===password) {
+      setMsg('');
+    } else {
+      setMsg('Passwords do not match');
+      return true;
+    }
+  }
+
+
 
   return (
     <section className="hero has-background-grey-light is-fullheight is-fullwidth">
@@ -42,7 +86,6 @@ const Register = () => {
           <div className="columns is-centered">
             <div className="column is-4-desktop">
               <form onSubmit={addUser} className="box">
-                <p className="has-text-centered">{msg}</p>
                 <div className="field mt-5">
                   <label className="label">Username</label>
                   <div className="controls">
@@ -54,6 +97,7 @@ const Register = () => {
                       onChange={(e) => setName(e.target.value)}
                     />
                   </div>
+                  <p class="help is-danger">{validName}</p>
                 </div>
                 <div className="field mt-5">
                   <label className="label">Email</label>
@@ -63,9 +107,10 @@ const Register = () => {
                       className="input"
                       placeholder="Email"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={checkEmail}
                     />
                   </div>
+                  <p class="help is-danger">{validMail}</p>
                 </div>
                 <div className="field mt-5">
                   <label className="label">Password</label>
@@ -75,9 +120,10 @@ const Register = () => {
                       className="input"
                       placeholder="********"
                       value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      onChange={checkPass}
                     />
                   </div>
+                  <p class="help is-danger">{validPass}</p>
                 </div>
                 <div className="field mt-5">
                   <label className="label">Confirm Password</label>
@@ -87,9 +133,10 @@ const Register = () => {
                       className="input"
                       placeholder="********"
                       value={confPassword}
-                      onChange={(e) => setConfPassword(e.target.value)}
+                      onChange={checkConfirmPass}
                     />
                   </div>
+                  <p class="help is-danger">{msg}</p>
                 </div>
                 <div className="field mt-5">
                   <button className="button is-success is-fullwidth">
