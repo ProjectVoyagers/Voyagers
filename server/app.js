@@ -25,6 +25,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 
 app.post("/register",bypassCORS, register);
 app.post("/login",bypassCORS, login);
+app.post("/fetchAllPackages", bypassCORS, fetchAllPackages);
 
 // error handling 
 
