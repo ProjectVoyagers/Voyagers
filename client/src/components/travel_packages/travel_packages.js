@@ -11,6 +11,24 @@ import info2 from "../../Assets/info2.png";
 import info3 from "../../Assets/info3.png";
 
 export default function TravelPackages() {
+  const GetPackageData = async (e) => {
+    e.preventDefault();
+    try {
+      await axios({
+        method: 'get',
+        url: 'http://localhost:5000/login',
+        
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      })
+      navigate("/");
+    } catch (error) {
+      if (error.response) {
+        setMsg(error.response.data.msg);
+      }
+    }
+  };
   const data = [
     {
       image: Destination1,
