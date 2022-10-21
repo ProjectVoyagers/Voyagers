@@ -6,7 +6,7 @@ import TravelPackages from "./components/travel_packages/travel_packages";
 // import  Shop  from "./components/shop/Shop";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./components/shop/Shop";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 export const AppContext = React.createContext();
 
