@@ -3,10 +3,10 @@ import Login from "./components/auth/login/login";
 import Register from "./components/auth/signup/Register";
 import LandingPage from "./pages/landingPage";
 import TravelPackages from "./components/travel_packages/travel_packages";
+import CityMap from "./pages/cityMap"
 // import  Shop  from "./components/shop/Shop";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./components/shop/Shop";
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 export const AppContext = React.createContext();
 
@@ -23,6 +23,8 @@ const App = (props) => {
         <Route path="/travelPackages" element={<TravelPackages/>}>
         </Route>
         <Route exact path="/shop" element={<Shop/>}>
+        </Route>
+        <Route exact path="/city" element={<CityMap/>}>
         </Route>
         {/* <Route path="/Shop" element={<Shop/>}>
         </Route> */}
