@@ -2,25 +2,33 @@ import * as React from 'react';
 import Map, {Marker} from 'react-map-gl';
 import {FaMapMarkerAlt} from 'react-icons/fa'
 import "./CityMap.css"
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const CityMap = () => {
+  const [viewport, setViewport] = React.useState({
+    width: "100vw",
+    height: "100vh",
+    latitude: 21.4285,
+    longitude: 91.9702,
+    zoom: 12,
+  });
   return (
-    <Map
-      initialViewState={{
-        longitude: 92.0058,
-        latitude: 21.4272,
-        zoom: 12
-      }}
-      mapboxAccessToken={process.env.REACT_APP_MAPBOX}
-      style={{width: "50vw", height: "100vh",paddingLeft: "55rem"}}
-      mapStyle="mapbox://styles/mapbox/streets-v9"
-      attributionControl={false}
-    >
-      <Marker longitude={92.0028} latitude={21.4693} scale={20}>
-        <FaMapMarkerAlt style={{fontSize: 30}}/>
-    </Marker>
-    </Map>
-    
+    <div>
+      <Map
+        initialViewState={{
+          ...viewport
+        }}
+        mapboxAccessToken={process.env.REACT_APP_MAPBOX}
+        onViewportChange={(viewport) => setViewport(viewport)}
+        style={{width: "50vw", height: "100vh", paddingRight: "55rem"}}
+        mapStyle="mapbox://styles/mapbox/streets-v9"
+        attributionControl={false}
+      >
+        <Marker longitude={91.9702} latitude={21.4285}>
+          <FaMapMarkerAlt size={30} color={'red'}/>
+      </Marker>
+      </Map>
+    </div>
   );
 }
 
