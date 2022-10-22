@@ -13,6 +13,7 @@ dotenv.config();
 const {notFoundHandler, errorHandler} = require("./middlewares/common/errorHandler");
 const { Router } = require("express");
 const { getPackages } = require("./middlewares/packages/FetchPackages");
+const { getPins } = require("./middlewares/packages/FetchPins");
 
 // request parsers
 app.use(express.urlencoded({extended: true}));
@@ -27,6 +28,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 app.post("/register",bypassCORS, register);
 app.post("/login",bypassCORS, login);
 app.get("/fetchAllPackages", bypassCORS, getPackages);
+app.get("/pins",bypassCORS, getPins);
 
 // error handling 
 
