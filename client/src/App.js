@@ -3,10 +3,10 @@ import Login from "./components/auth/login/login";
 import Register from "./components/auth/signup/Register";
 import LandingPage from "./pages/landingPage";
 import TravelPackages from "./components/travel_packages/travel_packages";
-import CityMap from "./pages/cityMap"
 // import  Shop  from "./components/shop/Shop";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./components/shop/Shop";
+import CityMap from "./components/map/cityMap";
 
 export const AppContext = React.createContext();
 
