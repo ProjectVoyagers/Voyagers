@@ -5,8 +5,9 @@ import {AiOutlineStar} from 'react-icons/ai'
 import 'mapbox-gl/dist/mapbox-gl.css';
 import "./CityMap.css"
 import axios from 'axios';
+import country from "../../Assets/home-bg-1.jpg"
 
-const CityMap = (props,ref) => {
+const CityMap = (props) => {
   const [pins, setPins] = useState([]);
   const [showPopup, setShowPopup] = useState(null);
   const [viewport, setViewport] = useState({
@@ -44,10 +45,29 @@ const CityMap = (props,ref) => {
           <div class="tile">
             <div class="tile is-6 is-parent">
               <article class="tile is-child box">
+              <div class="contain">
+                <img src={country} alt="Avatar" class="img" />
+                <div class="layover">Bangladesh</div>
+              </div>
               {pins.map(p => (
                   <>
-                  <p class="title" onClick={() => handleMarkerClick(p._id, p.lat, p.longt)} style={{cursor: "pointer"}}>{p.title}</p>
+                  <div class="columns is-multiline is-mobile">
+                    <div class="column is-one-quarter">
+                    <p class="title" onClick={() => handleMarkerClick(p._id, p.lat, p.longt)} style={{cursor: "pointer"}}>{p.title}</p>
+                    </div>
+                    <div class="column is-one-quarter">
+                    </div>
+                    <div class="column is-one-quarter">
+                    </div>
+                    <div class="column is-one-quarter">
+                    <button class="button is-black">Save</button>
+                    </div>
+                  </div>
+                  
                   <p class="subtitle">{p.rating} stars</p>
+                  <span class="tag is-black mx-1">Historial Landmark</span>
+                  <span class="tag is-black mx-1">Sights and Landmarks</span>
+                  <span class="tag is-black mb-4">Historic Sights</span>
                   <div class="content">
                       <p>{p.descr}</p>
                   </div>
@@ -65,7 +85,7 @@ const CityMap = (props,ref) => {
                   }}
                   mapboxAccessToken={process.env.REACT_APP_MAPBOX}
                   onViewportChange={(viewport) => setViewport(viewport)}
-                  style={{width: "100vw", height: "100vh"}}
+                  style={{width: "100vw", height: "100vh", position: "fixed"}}
                   mapStyle="mapbox://styles/mapbox/streets-v9"
                   attributionControl={false}
                 >

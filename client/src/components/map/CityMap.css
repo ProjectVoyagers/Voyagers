@@ -9,18 +9,57 @@
     justify-content: space-around;
   }
   
-  label {
+label {
     width: max-content;
     color: tomato;
     font-size: 13px;
     border-bottom: 0.5px solid tomato;
     margin: 3px 0;
-  }
+}
   
-  .desc {
+.desc {
     font-size: 14px;
-  }
+}
   
-  .star {
+.star {
     color: gold;
-  }
+}
+* {box-sizing: border-box}
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.contain {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Make the image to responsive */
+.img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.layover {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 30px;
+  padding-bottom: 50px;
+  text-align: left;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.contain:hover .layover {
+  opacity: 1;
+  text-align: left;
+  text-indent: 1rem;
+}
