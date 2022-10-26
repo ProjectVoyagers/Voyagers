@@ -3,7 +3,8 @@ import Login from "./components/auth/login/login";
 import Register from "./components/auth/signup/Register";
 import LandingPage from "./pages/landingPage";
 import TravelPackages from "./components/travel_packages/travel_packages";
-// import  Shop  from "./components/shop/Shop";
+import TravelPkgDesc from "./components/travel_pkg_desc/travel_pkg_desc.js";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./components/shop/Shop";
 import CityMap from "./components/map/cityMap";
@@ -21,6 +22,8 @@ const App = (props) => {
         <Route path="/register" element={<Register/>}>
         </Route>
         <Route path="/travelPackages" element={<TravelPackages/>}>
+        </Route>
+        <Route path="/travelPkgDesc" element={<TravelPkgDesc/>}>
         </Route>
         <Route exact path="/shop" element={<Shop/>}>
         </Route>
