@@ -48,7 +48,7 @@ class TravelPkgDesc extends React.Component{
     render(){
       const {products, index} = this.state;
       return(
-        <div className="app">
+        <div className="pkg_desc">
           {
             products.map(item =>(
               <div className="details" key={item._id}>
