@@ -21,7 +21,7 @@ class TravelPkgDesc extends React.Component{
           With its two Merlion statues squirting water out of their mouths, Merlion Park is an iconic sight, especially at nighttime against the backdrop of the brightly lit Marina Bay. And, of course, the Singapore Flyer, a 165-meter high observation wheel, is perfect for catching breathtaking views of the city. The 55-storey Marina Bay Sands is an iconic hotel that features a massive infinity pool and SkyPark at the very top.",
           
           "price": 45000,
-          "colors":["red","black","crimson","teal"],
+          
           "count": 1
         }
       ],
@@ -48,7 +48,7 @@ class TravelPkgDesc extends React.Component{
     render(){
       const {products, index} = this.state;
       return(
-        <div className="pkg_desc">
+        <div className="app">
           {
             products.map(item =>(
               <div className="details" key={item._id}>
@@ -57,10 +57,10 @@ class TravelPkgDesc extends React.Component{
                   <DetailsThumb images={item.src} tab={this.handleTab} myRef={this.myRef} />
                 </div>
   
-                <div className="box">
-                  <div className="row">
+                <div className="titlebox">
+                  <div className="titlePrice">
                     <h1>{item.title}</h1>
-                    <h3>BDT {item.price}</h3>
+                    <span>BDT {item.price}</span>
                   </div>
                   
                   <p>{item.description}  </p>

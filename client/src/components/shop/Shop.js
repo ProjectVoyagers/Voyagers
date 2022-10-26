@@ -4,6 +4,7 @@ import { CartProvider } from "react-use-cart";
 import CardDetails from "../cards/CardDetails";
 import data from "../data/Data";
 import Cart from "../cart/Cart";
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 const Shop = () => {
