@@ -29,8 +29,7 @@ const App = (props) => {
         </Route>
         <Route exact path="/city" element={<CityMap/>}>
         </Route>
-        {/* <Route path="/Shop" element={<Shop/>}>
-        </Route> */}
+        
       </Routes>
     </BrowserRouter>
   );
