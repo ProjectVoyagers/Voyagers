@@ -8,6 +8,7 @@ import TravelPkgDesc from "./components/travel_pkg_desc/travel_pkg_desc.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./components/shop/Shop";
 import CityMap from "./components/map/cityMap";
+import CityList from "./components/CityList/CityList";
 
 export const AppContext = React.createContext();
 
@@ -29,7 +30,8 @@ const App = (props) => {
         </Route>
         <Route exact path="/city" element={<CityMap/>}>
         </Route>
-        
+        <Route exact path="/cities" element={<CityList/>}>
+        </Route>
       </Routes>
     </BrowserRouter>
   );

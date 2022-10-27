@@ -5,16 +5,22 @@ import {AiOutlineStar} from 'react-icons/ai'
 import 'mapbox-gl/dist/mapbox-gl.css';
 import "./CityMap.css"
 import axios from 'axios';
-import country from "../../Assets/home-bg-1.jpg"
+import country from "../../Assets/Destination2.png";
+import { useLocation } from "react-router-dom";
 
 const CityMap = (props) => {
+  const location = useLocation();
+  const { state } = location;
   const [pins, setPins] = useState([]);
   const [showPopup, setShowPopup] = useState(null);
+  const {countryName, countryId, latitude, longtitude} = state;
+
   const [viewport, setViewport] = useState({
-    latitude: 21.4285,
-    longitude: 91.9702,
+    latitude: latitude,
+    longitude: longtitude,
     zoom: 6,
   });
+  
 
   const handleMarkerClick = (id, lat, long) => {
     setShowPopup(id);
@@ -25,11 +31,14 @@ const CityMap = (props) => {
     const getPins = async() => {
         try{
           const res = await axios({
-            method: 'get',
+            method: 'POST',
             url: 'http://localhost:5000/pins',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
             },
+            data: {
+              id: countryId
+            }
           })
           console.log(res.data.data)
           setPins(res.data.data);
@@ -38,7 +47,7 @@ const CityMap = (props) => {
         }
       }
     getPins();
-    },[])
+    },[countryId])
 
   return (
     <>
@@ -47,7 +56,7 @@ const CityMap = (props) => {
               <article class="tile is-child box">
               <div class="contain">
                 <img src={country} alt="Avatar" class="img" />
-                <div class="layover">Bangladesh</div>
+                <div class="layover">{countryName}</div>
               </div>
               {pins.map(p => (
                   <>
@@ -113,7 +122,7 @@ const CityMap = (props) => {
                             <label>Place</label>
                             <h4 className="place">{p.title}</h4>
                             <label>Review</label>
-                            <p className="desc">{p.descr}</p>
+                            <p className="desc">{p.descr.substring(0,25)}...</p>
                             <label>Rating</label>
                             <div className="stars">
                               {Array(p.rating).fill(<AiOutlineStar className="star" />)}
