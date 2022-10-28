@@ -10,15 +10,15 @@
     color: #fff;
 }
 
-.navbar-bg {
+.navbar-bg1 {
     background-color: #f5f5f5;
 }
 
-.nav-menu {
+.nav-menu1 {
     display: flex;
 }
 
-li {
+li1 {
     padding: 0 1rem;
     list-style-type: none;
 }

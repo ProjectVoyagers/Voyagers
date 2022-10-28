@@ -3,7 +3,7 @@ import { CartProvider } from "react-use-cart";
 
 import CardDetails from "../cards/CardDetails";
 import data from "../data/Data";
-
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const Shop = ({ props }) => {
 
