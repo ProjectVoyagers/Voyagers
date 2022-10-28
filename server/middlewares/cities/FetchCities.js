@@ -1,11 +1,10 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
-const {fetchAllPins} = require("../../controllers/users")
+const {fetchAllCities} = require("../../controllers/users")
 
-module.exports.getPins = async(req,res) => {
-    const {id} = req.body;
-    await fetchAllPins(id)
+module.exports.getCities = async(req,res) => {
+    await fetchAllCities()
     .then((data) => {
         // console.log(data);
         return res.json({data: data});

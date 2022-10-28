@@ -31,7 +31,6 @@ const Shop = ({ props }) => {
                         </div>
                     </div>
                 </div>
-
             </CartProvider>
         </>
     );

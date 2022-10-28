@@ -8,6 +8,7 @@ import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'reac
 import { Link } from 'react-scroll'
 
 import './NavbarStyles.css'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = (props) => {
     const [nav, setNav] = useState(false)
@@ -21,8 +22,9 @@ const Navbar = (props) => {
             <ul className="nav-menu">
                 <Link to='home' smooth={true} duration={500} ><li>Home</li></Link>
                 <Link to='destinations' smooth={true} duration={500} ><li>Destinations</li></Link>
-                <Link to='shop' smooth={true} duration={500} ><li>Shop</li></Link>
-                <Link to='package' smooth={true} duration={500} ><li>Package</li></Link>
+                <NavLink to='/shop' smooth={true} duration={500} ><li>Shop</li></NavLink>
+                <NavLink to='/travelPackages' smooth={true} duration={500} ><li>Package</li></NavLink>
+                {/* <Link to='/travelPackages' smooth={true} duration={500} ><li>Package</li></Link> */}
                 <Link to='blogs' smooth={true} duration={500} ><li>Blogs</li></Link>
             </ul>
             <div className="nav-icons">
