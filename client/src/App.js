@@ -7,27 +7,30 @@ import TravelPackages from "./components/travel_packages/travel_packages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./components/shop/Shop";
 import CityMap from "./components/map/cityMap";
-
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Checkout from "./components/checkout//Checkout";
+//import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+//import "@fortawesome/fontawesome-free/css/all.min.css";
 export const AppContext = React.createContext();
 
 const App = (props) => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<LandingPage/>}>
+        <Route exact path="/" element={<LandingPage />}>
         </Route>
-        <Route exact path="/login" element={<Login/>}>
+        <Route exact path="/login" element={<Login />}>
         </Route>
-        <Route path="/register" element={<Register/>}>
+        <Route path="/register" element={<Register />}>
         </Route>
-        <Route path="/travelPackages" element={<TravelPackages/>}>
+        <Route path="/travelPackages" element={<TravelPackages />}>
         </Route>
-        <Route exact path="/shop" element={<Shop/>}>
+        <Route exact path="/shop" element={<Shop />}>
         </Route>
-        <Route exact path="/city" element={<CityMap/>}>
+        <Route exact path="/city" element={<CityMap />}>
         </Route>
-        {/* <Route path="/Shop" element={<Shop/>}>
-        </Route> */}
+        <Route exact path="/checkout" element={<Checkout />}></Route>
+        
       </Routes>
     </BrowserRouter>
   );
