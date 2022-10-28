@@ -5,7 +5,7 @@
     position: relative;
 }
 
-.overlay {
+.overlay1 {
     background-color: rgba(0, 0, 0, 0.1);
     position: absolute;
     width: 100%;
@@ -21,7 +21,7 @@
     z-index: -1;
 }
 
-.hero .content {
+.hero .content1 {
     position: absolute;
     top: 0;
     height: 100%;
@@ -34,7 +34,7 @@
     padding: 1rem;
 }
 
-.form {
+.form1 {
     display: flex;
     background-color: #ffffffcc;
     color: #000;
@@ -44,11 +44,12 @@
     padding: 4px;
     border-radius: 8px;
     max-width: 700px;
+    max-height: 70px;
     width: 100%;
     margin: 2rem auto;
 }
 
-.form input[type=text] {
+.form1 input[type=text] {
     border: transparent;
     background-color: transparent;
     width: 400px;
@@ -56,12 +57,12 @@
     font-family: 'Poppins',sans-serif;
 }
 
-.form input[type=text]:focus {
+.form1 input[type=text]:focus {
     outline: none;
 }
 
 @media screen and (max-width: 940px) {
-    .form input[type=text] {
+    .form1 input[type=text] {
         max-width: 275px;
     }
 
