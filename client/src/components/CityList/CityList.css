@@ -136,3 +136,9 @@ p {
   .btn-16:active {
     top: 2px;
   }
+  .destinations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 0 3rem;
+  }

@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./components/shop/Shop";
 import CityMap from "./components/map/cityMap";
 import CityList from "./components/CityList/CityList";
+import AllCities from "./pages/AllCities";
 
 export const AppContext = React.createContext();
 
@@ -30,7 +31,7 @@ const App = (props) => {
         </Route>
         <Route exact path="/city" element={<CityMap/>}>
         </Route>
-        <Route exact path="/cities" element={<CityList/>}>
+        <Route exact path="/cities" element={<AllCities/>}>
         </Route>
       </Routes>
     </BrowserRouter>
