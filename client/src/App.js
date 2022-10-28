@@ -11,6 +11,7 @@ import CityMap from "./components/map/cityMap";
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Checkout from "./components/checkout//Checkout";
 import AllCities from "./pages/AllCities";
+import Packages from "./pages/TravelPackages";
 //import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 //import "@fortawesome/fontawesome-free/css/all.min.css";import AllCities from "./pages/AllCities";
 
@@ -26,7 +27,7 @@ const App = (props) => {
         </Route>
         <Route path="/register" element={<Register />}>
         </Route>
-        <Route path="/travelPackages" element={<TravelPackages />}>
+        <Route path="/travelPackages" element={<Packages />}>
         </Route>
         <Route path="/travelPkgDesc" element={<TravelPkgDesc />}>
         </Route>

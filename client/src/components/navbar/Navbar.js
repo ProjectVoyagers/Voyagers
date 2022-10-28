@@ -20,8 +20,8 @@ const Navbar = (props) => {
                 <h2>Voyagers</h2>
             </div>
             <ul className="nav-menu">
-                <Link to='home' smooth={true} duration={500} ><li>Home</li></Link>
-                <Link to='destinations' smooth={true} duration={500} ><li>Destinations</li></Link>
+                <NavLink to='/' smooth={true} duration={500} ><li>Home</li></NavLink>
+                <NavLink to='/cities' smooth={true} duration={500} ><li>Destinations</li></NavLink>
                 <NavLink to='/shop' smooth={true} duration={500} ><li>Shop</li></NavLink>
                 <NavLink to='/travelPackages' smooth={true} duration={500} ><li>Package</li></NavLink>
                 {/* <Link to='/travelPackages' smooth={true} duration={500} ><li>Package</li></Link> */}
