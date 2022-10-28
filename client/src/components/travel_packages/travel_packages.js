@@ -10,6 +10,7 @@ import styled from "styled-components";
 import info1 from "../../Assets/info1.png";
 import info2 from "../../Assets/info2.png";
 import info3 from "../../Assets/info3.png";
+import {NavLink } from "react-router-dom";
 
 export default function TravelPackages() {
 
@@ -41,7 +42,7 @@ export default function TravelPackages() {
   //   "Family Trips",
   // ];
 
-  const [active, setActive] = useState(1);
+  // const [active, setActive] = useState(1);
   return (
     <Section id="TravelPackages">
       <div className="title">
@@ -64,6 +65,8 @@ export default function TravelPackages() {
       <div className="destinations">
         {data.map((destination) => {
           return (
+            <NavLink to={{
+              pathname: "/travelPkgDesc"}} state={{title: destination.title}}>
             <div className="destination">
               <img src={destination.image} alt="" />
               <h3>{destination.title}</h3>
@@ -81,6 +84,7 @@ export default function TravelPackages() {
                 <span>{destination.duration}</span>
               </div>
             </div>
+            </NavLink>
           );
         })}
       </div>
