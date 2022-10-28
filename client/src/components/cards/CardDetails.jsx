@@ -1,11 +1,26 @@
 import React from 'react'
-import {useCart} from 'react-use-cart';
+import { createContext } from 'react';
+import { useState } from 'react';
+import { useCart } from 'react-use-cart';
+import Shop from '../shop/Shop';
+
+const countcart=createContext(0)
 const CardDetails = (props) => {
 
     const { addItem } = useCart();
+    const [disable,setDisable]=useState(false);
+    const [text,settext]=useState("Add to Cart");
+    const [count,setcount]=useState(0);
+    
+    function cde(){
+        setDisable(true)
+        settext("Added")
+        addItem(props.item)
+        setcount(count++)
+    }
     return (
         <>
-             <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4">
+            <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4">
                 <div className="card h-100 shadow rounded">
                     <img src={props.img} alt="" className="card-img-top img-fluid" />
                     <div className="card-body">
@@ -17,13 +32,15 @@ const CardDetails = (props) => {
                             <p className="card-text">{props.desc}</p>
                         </div>
                         <div className="d-grid justify-content-end mt-4">
-                        <button type="button" class="btn btn-success" onClick={() => addItem(props.item)}>Add to Cart</button>
+                            <button type="button" class="btn btn-success"  disabled={disable}  onClick={() => cde()}>{text}</button>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </>
     )
 }
 
 export default CardDetails
+
