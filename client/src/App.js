@@ -8,8 +8,9 @@ import TravelPkgDesc from "./components/travel_pkg_desc/travel_pkg_desc.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./components/shop/Shop";
 import CityMap from "./components/map/cityMap";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Checkout from "./components/checkout//Checkout";
+import AllCities from "./pages/AllCities";
 //import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 //import "@fortawesome/fontawesome-free/css/all.min.css";import AllCities from "./pages/AllCities";
 
@@ -27,11 +28,17 @@ const App = (props) => {
         </Route>
         <Route path="/travelPackages" element={<TravelPackages />}>
         </Route>
+        <Route path="/travelPkgDesc" element={<TravelPkgDesc />}>
+        </Route>
         <Route exact path="/shop" element={<Shop />}>
+        </Route>
+        <Route path="/cities" element={<AllCities />}>
         </Route>
         <Route exact path="/city" element={<CityMap />}>
         </Route>
-        <Route exact path="/checkout" element={<Checkout />}></Route>
+        <Route exact path="/checkout" element={<Checkout />}>
+        </Route>
+        
         
       </Routes>
     </BrowserRouter>
