@@ -3,7 +3,7 @@ import { useCart } from 'react-use-cart';
 import './Cart.css';
 const Cart = () => {
 
-    const { 
+    const {
         isEmpty,
         totalUniqueItems,
         items,
@@ -13,9 +13,9 @@ const Cart = () => {
         removeItem,
         emptyCart,
     } = useCart();
-    if(isEmpty) return <h5 className='text-center py-5'>My Cart is Empty.</h5>
+    if (isEmpty) return <h5 className='text-center py-5'>My Cart is Empty.</h5>
     return (
-          <>
+        <>
             <div className='container-fluid py-3'>
                 <div className='row align-items-start'>
                     <div className='col align-items-start'>
