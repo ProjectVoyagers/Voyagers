@@ -8,22 +8,24 @@ import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'reac
 import { Link } from 'react-scroll'
 
 import './NavbarStyles.css'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = (props) => {
     const [nav, setNav] = useState(false)
     const handleNav = () => setNav(!nav)
 
     return (
-        <div name='home' className={nav ? 'navbar navbar-bg' : 'navbar'}>
+        <div name='home' className={nav ? 'navbar navbar-bg1' : 'navbar'}>
             <div className={nav ? 'logo dark' : 'logo'}>
                 <h2>Voyagers</h2>
             </div>
-            <ul className="nav-menu">
-                <Link to='home' smooth={true} duration={500} ><li>Home</li></Link>
-                <Link to='destinations' smooth={true} duration={500} ><li>Destinations</li></Link>
-                <Link to='shop' smooth={true} duration={500} ><li>Shop</li></Link>
-                <Link to='package' smooth={true} duration={500} ><li>Package</li></Link>
-                <Link to='blogs' smooth={true} duration={500} ><li>Blogs</li></Link>
+            <ul className="nav-menu1">
+                <NavLink to='/' smooth={true} duration={500} ><li1>Home</li1></NavLink>
+                <NavLink to='destinations' smooth={true} duration={500} ><li1>Destinations</li1></NavLink>
+                <NavLink to='/shop' smooth={true} duration={500} ><li1>Shop</li1></NavLink>
+                <NavLink to='/travelPackages' smooth={true} duration={500} ><li1>Package</li1></NavLink>
+                {/* <Link to='/travelPackages' smooth={true} duration={500} ><li>Package</li></Link> */}
+                <Link to='blogs' smooth={true} duration={500} ><li1>Blogs</li1></Link>
             </ul>
             <div className="nav-icons">
                 <BiSearch className='icon' style={{ marginRight: '1rem' }} />

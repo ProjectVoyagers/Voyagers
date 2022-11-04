@@ -26,7 +26,7 @@ const Login = () => {
       navigate("/");
     } catch (error) {
       if (error.response) {
-        setMsg(error.response.data.msg);
+        setMsg('Invalid username or password!');
       }
     }
   };
@@ -38,7 +38,7 @@ const Login = () => {
           <div className="columns is-centered">
             <div className="column is-4-desktop">
               <form onSubmit={Auth} className="box">
-                <p className="has-text-centered">{msg}</p>
+                <p className="has-text-centered help is-danger">{msg}</p>
                 <div className="field mt-5">
                   <label className="label">Email or Username</label>
                   <div className="controls">

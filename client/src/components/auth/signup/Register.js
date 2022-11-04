@@ -37,6 +37,16 @@ const Register = () => {
     }
   };
 
+  const checkUsername = (e) =>{
+    setName(e.target.value);
+    if(name.length===0) {
+      setvalidName('Please enter a username')
+    } else {
+      setvalidName('');
+      return true;
+    }
+  }
+
   const regex = /\S+@\S+\.\S+/;
   const checkEmail = (e) =>{
     setEmail(e.target.value);
@@ -94,7 +104,7 @@ const Register = () => {
                       className="input"
                       placeholder="Username"
                       value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={checkUsername}
                     />
                   </div>
                   <p class="help is-danger">{validName}</p>

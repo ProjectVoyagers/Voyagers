@@ -10,6 +10,7 @@ import styled from "styled-components";
 import info1 from "../../Assets/info1.png";
 import info2 from "../../Assets/info2.png";
 import info3 from "../../Assets/info3.png";
+import {NavLink } from "react-router-dom";
 
 export default function TravelPackages() {
 
@@ -34,20 +35,20 @@ export default function TravelPackages() {
     fetchData();
   },[]);
   
-  const packages = [
-    "The Weekend Break",
-    "The Package Holiday",
-    "The Group Tour",
-    "Family Trips",
-  ];
+  // const packages = [
+  //   "The Weekend Break",
+  //   "The Package Holiday",
+  //   "The Group Tour",
+  //   "Family Trips",
+  // ];
 
-  const [active, setActive] = useState(1);
+  // const [active, setActive] = useState(1);
   return (
     <Section id="TravelPackages">
       <div className="title">
         <h2>Travel Packages</h2>
       </div>
-      <div className="packages">
+      {/* <div className="packages">
         <ul>
           {packages.map((pkg, index) => {
             return (
@@ -60,10 +61,12 @@ export default function TravelPackages() {
             );
           })}
         </ul>
-      </div>
+      </div> */}
       <div className="destinations">
         {data.map((destination) => {
           return (
+            <NavLink to={{
+              pathname: "/travelPkgDesc"}} state={{title: destination.title}}>
             <div className="destination">
               <img src={destination.image} alt="" />
               <h3>{destination.title}</h3>
@@ -74,13 +77,14 @@ export default function TravelPackages() {
                   <img src={info2} alt="" />
                   <img src={info3} alt="" />
                 </div>
-                <h4>{destination.cost}</h4>
+                <h4>{"BDT " + destination.cost}</h4>
               </div>
               <div className="distance">
-                <span>1000 Kms</span>
+                <span></span>
                 <span>{destination.duration}</span>
               </div>
             </div>
+            </NavLink>
           );
         })}
       </div>
