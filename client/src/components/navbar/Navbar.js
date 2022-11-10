@@ -21,7 +21,7 @@ const Navbar = (props) => {
             </div>
             <ul className="nav-menu1">
                 <NavLink to='/' smooth={true} duration={500} ><li1>Home</li1></NavLink>
-                <NavLink to='destinations' smooth={true} duration={500} ><li1>Destinations</li1></NavLink>
+                <NavLink to='/cities' smooth={true} duration={500} ><li1>Destinations</li1></NavLink>
                 <NavLink to='/shop' smooth={true} duration={500} ><li1>Shop</li1></NavLink>
                 <NavLink to='/travelPackages' smooth={true} duration={500} ><li1>Package</li1></NavLink>
                 {/* <Link to='/travelPackages' smooth={true} duration={500} ><li>Package</li></Link> */}

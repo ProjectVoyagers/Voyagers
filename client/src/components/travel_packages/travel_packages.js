@@ -46,7 +46,7 @@ export default function TravelPackages() {
   return (
     <Section id="TravelPackages">
       <div className="title">
-        <h2>Travel Packages</h2>
+        <h2 style={{"margin-top": "4rem"}}>Travel Packages</h2>
       </div>
       {/* <div className="packages">
         <ul>
@@ -118,6 +118,7 @@ const Section = styled.section`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
+    margin-top: 4rem;
     padding: 0 3rem;
     .destination {
       padding: 1rem;

@@ -29,6 +29,9 @@ const CityList = () => {
     return(
         <>
         <Section>
+        <div className="title">
+        <h2 style={{"margin-top": "4rem"}}>Destinations</h2>
+      </div>
           <div className='destinations'>        
             {allCities.map(city => (
               <NavLink to={{
@@ -70,7 +73,7 @@ const Section = styled.section`
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 1rem;
-    margin-top: 4rem;
+    margin-top: 1rem;
     padding: 0 3rem;
     .destination {
       padding: 1rem;
