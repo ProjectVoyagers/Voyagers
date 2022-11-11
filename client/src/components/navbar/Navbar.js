@@ -16,7 +16,7 @@ const Navbar = (props) => {
 
     return (
         <div name='home' className={nav ? 'navbar navbar-bg1' : 'navbar'}>
-            <div className={nav ? 'logo dark' : 'logo'}>
+            <div className={nav ? 'logo_dark' : 'logo'}>
                 <h2>Voyagers</h2>
             </div>
             <ul className="nav-menu1">
@@ -24,7 +24,7 @@ const Navbar = (props) => {
                 <NavLink to='/cities' smooth={true} duration={500} ><li1>Destinations</li1></NavLink>
                 <NavLink to='/shop' smooth={true} duration={500} ><li1>Shop</li1></NavLink>
                 <NavLink to='/travelPackages' smooth={true} duration={500} ><li1>Package</li1></NavLink>
-                {/* <Link to='/travelPackages' smooth={true} duration={500} ><li>Package</li></Link> */}
+                
                 <Link to='blogs' smooth={true} duration={500} ><li1>Blogs</li1></Link>
             </ul>
             <div className="nav-icons">

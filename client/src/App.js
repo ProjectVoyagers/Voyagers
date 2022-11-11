@@ -5,7 +5,7 @@ import LandingPage from "./pages/landingPage";
 import TravelPkgDesc from "./components/travel_pkg_desc/travel_pkg_desc.js";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Shop from "./components/shop/Shop";
+import Shop from "./pages/ShopPage.js";
 import CityMap from "./components/map/cityMap";
 
 import Checkout from "./components/checkout//Checkout";
@@ -31,6 +31,8 @@ const App = (props) => {
         <Route path="/travelPkgDesc" element={<TravelPkgDesc />}>
         </Route>
         <Route exact path="/shop" element={<Shop />}>
+        </Route>
+        <Route exact path="/cart" element={<Checkout />}>
         </Route>
         <Route path="/cities" element={<AllCities />}>
         </Route>
