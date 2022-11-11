@@ -2,7 +2,6 @@ import React from "react";
 import Login from "./components/auth/login/login";
 import Register from "./components/auth/signup/Register";
 import LandingPage from "./pages/landingPage";
-import TravelPackages from "./components/travel_packages/travel_packages";
 import TravelPkgDesc from "./components/travel_pkg_desc/travel_pkg_desc.js";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";

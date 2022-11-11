@@ -1,7 +1,7 @@
 import React from 'react';
 import './travel_pkg_desc.css';
 import DetailsThumb from './DetailsThumb';
-
+import Navbar from "../../components/navbar/Navbar";
 class TravelPkgDesc extends React.Component{
 
     state = {
@@ -47,32 +47,35 @@ class TravelPkgDesc extends React.Component{
   
     render(){
       const {products, index} = this.state;
-      return(
-        <div className="app">
-          {
-            products.map(item =>(
-              <div className="details" key={item._id}>
-                <div className="big-img">
-                  <img src={item.src[index]} alt="" />
-                  <DetailsThumb images={item.src} tab={this.handleTab} myRef={this.myRef} />
-                </div>
-  
-                <div className="titlebox">
-                  <div className="titlePrice">
-                    <h1>{item.title}</h1>
-                    <span>BDT {item.price}</span>
-                  </div>
-                  
-                  <p>{item.description}  </p>
-                  <p>{item.content}</p>
-  
-                  <button className="cart">Add to cart</button>
-  
-                </div>
+      return (
+        <>
+          <Navbar />
+          <div className="app">
+        {
+          products.map(item =>(
+            <div className="details" key={item._id}>
+              <div className="big-img">
+                <img src={item.src[index]} alt="" />
+                <DetailsThumb images={item.src} tab={this.handleTab} myRef={this.myRef} />
               </div>
-            ))
-          }
-        </div>
+
+              <div className="titlebox">
+                <div className="titlePrice">
+                  <h1>{item.title}</h1>
+                  <span>BDT {item.price}</span>
+                </div>
+                
+                <p>{item.description}  </p>
+                <p>{item.content}</p>
+
+                <button className="cart">Add to cart</button>
+
+              </div>
+            </div>
+          ))
+        }
+      </div></>
+        
       );
     };
 }
