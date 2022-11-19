@@ -101,3 +101,21 @@ module.exports.fetchAllCities = async(count) => {
      throw error;
   }
 }
+
+module.exports.fetchReqCities = async() => {
+  try{
+    const response = await new Promise((resolve,reject) => {
+      db.execute(
+        'SELECT * FROM `pins`',
+        (err, results) => {
+          if(err) {
+            reject(err.message);
+          }
+          resolve(results);
+        })
+    });
+    return response; 
+  } catch(error) {
+     throw error;
+  }
+}

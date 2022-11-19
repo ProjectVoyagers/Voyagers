@@ -69,7 +69,7 @@ const CityMap = (props) => {
                     <div class="column is-one-quarter">
                     </div>
                     <div class="column is-one-quarter">
-                    <button class="button is-black">Save</button>
+                    <button class="btn">Save</button>
                     </div>
                   </div>
                   

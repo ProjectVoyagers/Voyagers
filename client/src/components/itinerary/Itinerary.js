@@ -1,6 +1,51 @@
-import "./itinerary.css"
+import { useEffect, useState } from "react";
+import {useNavigate } from "react-router-dom";
+import "./itinerary.css";
+import axios from "axios";
 
 const Itinerary = (props) => {
+  const [city, setCities] = useState([]);
+  const [list, setList] = useState([]);
+  const navigate = useNavigate();
+
+  const postItinerary = async() => {
+    try{
+      const res = await axios({
+        method: 'POST',
+        url: 'http://localhost:5000/pins',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        data: {
+          list: list 
+        }
+      })
+      navigate('/itinerary');
+    } catch(err){
+      console.log(err);
+    }
+  }
+
+
+  useEffect(() => {
+    const getPins = async () => {
+      try {
+        const res = await axios({
+          method: "GET",
+          url: "http://localhost:5000/getCities",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        });
+        console.log(res.data.data);
+        setCities(res.data.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getPins();
+  }, []);
+
   return (
     <>
       <section className="white-stripe arrow">
@@ -10,61 +55,19 @@ const Itinerary = (props) => {
       </section>
       <section className="timeline">
         <div className="container">
-          <div className="row">
-            <a href="http://asia.vasilis-tsirimokos.com/japan.html">
-              <div className="country-block col-sm-6">
-                <i className="jp"></i>
-                Japan
+          {city.map((c, index) => (
+            <div className="row">
+              <a href="http://asia.vasilis-tsirimokos.com/japan.html">
+                <div className={ (index+1) % 2 !== 0 ? "country-block col-sm-6" : "country-block reverse col-sm-6 col-sm-push-6"}>
+                  <i className="jp"></i>
+                  {c.title}
+                </div>
+              </a>
+              <div className={(index+1) % 2 !== 0 ? "date-block col-sm-6" : "date-block reverse col-sm-6 col-sm-pull-6"}>
+                <div>11 April - 28 April</div>
               </div>
-            </a>
-            <div className="date-block col-sm-6">
-              <div>11 April - 28 April</div>
             </div>
-          </div>
-          <div className="row">
-            <a href="http://asia.vasilis-tsirimokos.com/vietnam.html">
-              <div className="country-block reverse col-sm-6 col-sm-push-6">
-                <i className="vt"></i>
-                Vietnam
-              </div>
-            </a>
-            <div className="date-block reverse col-sm-6 col-sm-pull-6">
-              <div>28 April - 20 May</div>
-            </div>
-          </div>
-          <div className="row">
-            <a href="http://asia.vasilis-tsirimokos.com/cambodia.html">
-              <div className="country-block cb col-sm-6">
-                <i className="cb"></i>
-                Cambodia
-              </div>
-            </a>
-            <div className="date-block col-sm-6">
-              <div>20 May - 29 May</div>
-            </div>
-          </div>
-          <div className="row">
-            <a href="http://asia.vasilis-tsirimokos.com/thailand.html">
-              <div className="country-block reverse col-sm-6 col-sm-push-6">
-                <i className="th"></i>
-                Thailand
-              </div>
-            </a>
-            <div className="date-block reverse col-sm-6 col-sm-pull-6">
-              <div>29 May - 19 June</div>
-            </div>
-          </div>
-          <div className="row">
-            <a href="http://asia.vasilis-tsirimokos.com/malaysia.html">
-              <div className="country-block col-sm-6">
-                <i className="ml"></i>
-                Malaysia
-              </div>
-            </a>
-            <div className="date-block col-sm-6">
-              <div>19 June - 3 July</div>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
     </>

@@ -14,7 +14,7 @@ const {notFoundHandler, errorHandler} = require("./middlewares/common/errorHandl
 const { Router } = require("express");
 const { getPackages } = require("./middlewares/packages/FetchPackages");
 const { getPins } = require("./middlewares/packages/FetchPins");
-const { getCities } = require("./middlewares/cities/FetchCities");
+const { getCities, fetchCities } = require("./middlewares/cities/FetchCities");
 
 // request parsers
 app.use(express.urlencoded({extended: true}));
@@ -31,6 +31,7 @@ app.post("/login",bypassCORS, login);
 app.get("/fetchAllPackages", bypassCORS, getPackages);
 app.post("/pins",bypassCORS, getPins);
 app.get("/cities",bypassCORS, getCities);
+app.get("/getCities", bypassCORS, fetchCities);
 
 // error handling 
 
