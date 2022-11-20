@@ -7,6 +7,7 @@ import "./CityMap.css"
 import axios from 'axios';
 import country from "../../Assets/Destination2.png";
 import { useLocation } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 const CityMap = (props) => {
   const location = useLocation();
@@ -14,14 +15,40 @@ const CityMap = (props) => {
   const [pins, setPins] = useState([]);
   const [showPopup, setShowPopup] = useState(null);
   const {countryName, countryId, latitude, longtitude} = state;
-
+  const [list, setList] = useState([]);
+  const navigate = useNavigate();
+  
   const [viewport, setViewport] = useState({
     latitude: latitude,
     longitude: longtitude,
     zoom: 6,
   });
   
+  const addCity = async(e) => {
+    e.preventDefault()
+    console.log(e.target.value)
+  }
 
+
+  const postItinerary = async(e) => {
+    e.preventDefault()
+    console.log(e.target.value)
+    try{
+      await axios({
+        method: 'POST',
+        url: 'http://localhost:5000/addCities',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        data: {
+          list: list 
+        }
+      })
+      navigate('/itinerary');
+    } catch(err){
+      console.log(err);
+    }
+  } 
   const handleMarkerClick = (id, lat, long) => {
     setShowPopup(id);
     setViewport({ ...viewport, latitude: lat, longitude: long });
@@ -40,7 +67,7 @@ const CityMap = (props) => {
               id: countryId
             }
           })
-          console.log(res.data.data)
+          // console.log(res.data.data)
           setPins(res.data.data);
         } catch(err){
           console.log(err);
@@ -51,42 +78,48 @@ const CityMap = (props) => {
 
   return (
     <>
-          <div class="tile">
-            <div class="tile is-6 is-parent">
-              <article class="tile is-child box">
-              <div class="contain">
-                <img src={country} alt="Avatar" class="img" />
-                <div class="layover">{countryName}</div>
+          <div className="tile">
+            <div className="tile is-6 is-parent">
+              <article className="tile is-child box">
+              <div className="contain">
+                <img src={country} alt="Avatar" className="img" />
+                <div className="layover">{countryName}</div>
               </div>
+              
               {pins.map(p => (
                   <>
-                  <div class="columns is-multiline is-mobile">
-                    <div class="column is-one-quarter">
-                    <p class="title" onClick={() => handleMarkerClick(p._id, p.lat, p.longt)} style={{cursor: "pointer"}}>{p.title}</p>
+                  <form onSubmit={addCity}>
+                  <div className="columns is-multiline is-mobile">
+                    <div className="column is-one-quarter">
+                    <p className="title" onClick={() => handleMarkerClick(p._id, p.lat, p.longt)} style={{cursor: "pointer"}} value={p.title}>{p.title}</p>
                     </div>
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                     </div>
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                     </div>
-                    <div class="column is-one-quarter">
-                    <button class="btn">Save</button>
+                    <div className="column is-one-quarter">
+                    <button className="btn" type='submit'>Save</button>
                     </div>
                   </div>
                   
-                  <p class="subtitle">{p.rating} stars</p>
-                  <span class="tag is-black mx-1">Historial Landmark</span>
-                  <span class="tag is-black mx-1">Sights and Landmarks</span>
-                  <span class="tag is-black mb-4">Historic Sights</span>
-                  <div class="content">
-                      <p>{p.descr}</p>
+                  <p className="subtitle" value={p.rating}>{p.rating} stars</p>
+                  <span className="tag is-black mx-1">Historial Landmark</span>
+                  <span className="tag is-black mx-1">Sights and Landmark</span>
+                  <span className="tag is-black mb-4">Historic Sights</span>
+                  <div className="content">
+                      <p value={p.descr}>{p.descr}</p>
                   </div>
                   <hr />
+                  </form>
                   </>
-              ))}     
+              ))}
+                  <button className="btn">
+                      Go to itinerary
+                  </button>        
               </article>
             </div>
-            <div class="tile is-parent">
-              <article class="tile is-child">
+            <div className="tile is-parent">
+              <article className="tile is-child">
               <div>
                 <Map
                   initialViewState={{

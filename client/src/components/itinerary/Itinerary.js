@@ -1,31 +1,9 @@
 import { useEffect, useState } from "react";
-import {useNavigate } from "react-router-dom";
 import "./itinerary.css";
 import axios from "axios";
 
 const Itinerary = (props) => {
   const [city, setCities] = useState([]);
-  const [list, setList] = useState([]);
-  const navigate = useNavigate();
-
-  const postItinerary = async() => {
-    try{
-      const res = await axios({
-        method: 'POST',
-        url: 'http://localhost:5000/pins',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        data: {
-          list: list 
-        }
-      })
-      navigate('/itinerary');
-    } catch(err){
-      console.log(err);
-    }
-  }
-
 
   useEffect(() => {
     const getPins = async () => {
@@ -37,7 +15,7 @@ const Itinerary = (props) => {
             "Content-Type": "application/x-www-form-urlencoded",
           },
         });
-        console.log(res.data.data);
+        // console.log(res.data.data);
         setCities(res.data.data);
       } catch (err) {
         console.log(err);

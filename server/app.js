@@ -32,6 +32,7 @@ app.get("/fetchAllPackages", bypassCORS, getPackages);
 app.post("/pins",bypassCORS, getPins);
 app.get("/cities",bypassCORS, getCities);
 app.get("/getCities", bypassCORS, fetchCities);
+app.post("/addCities", bypassCORS);
 
 // error handling 
 
