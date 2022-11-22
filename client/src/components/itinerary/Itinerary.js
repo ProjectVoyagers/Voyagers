@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./itinerary.css";
-import axios from "axios";
+// import axios from "axios";
 import {useLocation} from 'react-router-dom';
 
 const Itinerary = (props) => {

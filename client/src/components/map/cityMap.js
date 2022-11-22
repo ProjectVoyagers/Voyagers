@@ -23,7 +23,7 @@ const CityMap = (props) => {
     longitude: longtitude,
     zoom: 6,
   });
-  
+
   const addCity = (item) => {
     if(list.indexOf(item) !== -1) return;
     setList([...list, item]);
@@ -97,7 +97,13 @@ const CityMap = (props) => {
                     <div className="column is-one-quarter">
                     </div>
                     <div className="column is-one-quarter">
-                    <button className="btn" onClick={() => addCity(p)}>Save</button>
+                    <button className="btn" onClick={() => {
+                      addCity(p)
+                    } 
+                      
+                      }>
+                        Save
+                        </button>
                     </div>
                   </div>
                   
