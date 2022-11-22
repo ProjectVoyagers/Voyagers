@@ -24,27 +24,27 @@ const CityMap = (props) => {
     zoom: 6,
   });
   
-  const addCity = async(e) => {
-    e.preventDefault()
-    console.log(e.target.value)
+  const addCity = (item) => {
+    if(list.indexOf(item) !== -1) return;
+    setList([...list, item]);
   }
 
 
-  const postItinerary = async(e) => {
-    e.preventDefault()
-    console.log(e.target.value)
+  const postItinerary = () => {
+    // e.preventDefault()
+    console.log(list);
     try{
-      await axios({
-        method: 'POST',
-        url: 'http://localhost:5000/addCities',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        data: {
-          list: list 
-        }
-      })
-      navigate('/itinerary');
+      // await axios({
+      //   method: 'POST',
+      //   url: 'http://localhost:5000/addCities',
+      //   headers: {
+      //     'Content-Type': 'application/x-www-form-urlencoded',
+      //   },
+      //   data: {
+      //     list: list 
+      //   }
+      // })
+      navigate('/itinerary',{state:{list: list}});
     } catch(err){
       console.log(err);
     }
@@ -88,7 +88,6 @@ const CityMap = (props) => {
               
               {pins.map(p => (
                   <>
-                  <form onSubmit={addCity}>
                   <div className="columns is-multiline is-mobile">
                     <div className="column is-one-quarter">
                     <p className="title" onClick={() => handleMarkerClick(p._id, p.lat, p.longt)} style={{cursor: "pointer"}} value={p.title}>{p.title}</p>
@@ -98,7 +97,7 @@ const CityMap = (props) => {
                     <div className="column is-one-quarter">
                     </div>
                     <div className="column is-one-quarter">
-                    <button className="btn" type='submit'>Save</button>
+                    <button className="btn" onClick={() => addCity(p)}>Save</button>
                     </div>
                   </div>
                   
@@ -110,10 +109,9 @@ const CityMap = (props) => {
                       <p value={p.descr}>{p.descr}</p>
                   </div>
                   <hr />
-                  </form>
                   </>
               ))}
-                  <button className="btn">
+                  <button className="btn" onClick={() => postItinerary()}>
                       Go to itinerary
                   </button>        
               </article>

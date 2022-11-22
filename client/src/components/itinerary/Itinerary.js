@@ -1,28 +1,32 @@
 import { useEffect, useState } from "react";
 import "./itinerary.css";
 import axios from "axios";
+import {useLocation} from 'react-router-dom';
 
 const Itinerary = (props) => {
   const [city, setCities] = useState([]);
+  const location = useLocation();
+  const { state } = location;
+  const {list} = state;
 
   useEffect(() => {
     const getPins = async () => {
       try {
-        const res = await axios({
-          method: "GET",
-          url: "http://localhost:5000/getCities",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        });
+        // const res = await axios({
+        //   method: "GET",
+        //   url: "http://localhost:5000/getCities",
+        //   headers: {
+        //     "Content-Type": "application/x-www-form-urlencoded",
+        //   },
+        // });
         // console.log(res.data.data);
-        setCities(res.data.data);
+        setCities(list);
       } catch (err) {
         console.log(err);
       }
     };
     getPins();
-  }, []);
+  }, [list]);
 
   return (
     <>
