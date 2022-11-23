@@ -4,7 +4,7 @@ import DetailsThumb from './DetailsThumb';
 import Navbar from "../../components/navbar/Navbar";
 
 class TravelPkgDesc extends React.Component{
-
+    
     state = {
       products: [
         {

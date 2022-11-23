@@ -29,7 +29,10 @@ const Navbar = (props) => {
             </ul>
             <div className="nav-icons">
                 <BiSearch className='icon' style={{ marginRight: '1rem' }} />
-                <BsPerson className='icon' />
+                <NavLink to='/login' smooth={true} duration={500} >
+
+                    <BsPerson className='icon' />
+                    </NavLink>
             </div>
             <div className="hamburger" onClick={handleNav}>
                 {!nav ? (<HiOutlineMenuAlt4 className='icon' />) : (<AiOutlineClose style={{ color: '#000' }} className='icon' />)}

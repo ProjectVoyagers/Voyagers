@@ -35,11 +35,11 @@ const Itinerary = (props) => {
           <h3>Destinations</h3>
         </div>
       </section>
-      <section className="timeline">
+      <section className="timeline1">
         <div className="container">
           {city.map((c, index) => (
             <div className="row">
-              <a href="http://asia.vasilis-tsirimokos.com/japan.html">
+              <a href="">
                 <div className={ (index+1) % 2 !== 0 ? "country-block col-sm-6" : "country-block reverse col-sm-6 col-sm-push-6"}>
                   <i className="jp"></i>
                   {c.title}
