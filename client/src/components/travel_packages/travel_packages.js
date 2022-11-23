@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-// import Destination1 from "../../Assets/Destination1.png";
-// import Destination2 from "../../Assets/Destination2.png";
-// import Destination3 from "../../Assets/Destination3.png";
-// import Destination4 from "../../Assets/Destination4.png";
-// import Destination5 from "../../Assets/Destination5.png";
-// import Destination6 from "../../Assets/Destination6.png";
+import Destination1 from "../../Assets/Destination1.png";
+import Destination2 from "../../Assets/Destination2.png";
+import Destination3 from "../../Assets/Destination3.png";
+import Destination4 from "../../Assets/Destination4.png";
+import Destination5 from "../../Assets/Destination5.png";
+import Destination6 from "../../Assets/Destination6.png";
 import info1 from "../../Assets/info1.png";
 import info2 from "../../Assets/info2.png";
 import info3 from "../../Assets/info3.png";

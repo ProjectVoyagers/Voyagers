@@ -14,7 +14,7 @@ const CityMap = (props) => {
   const { state } = location;
   const [pins, setPins] = useState([]);
   const [showPopup, setShowPopup] = useState(null);
-  const {countryName, countryId, latitude, longtitude} = state;
+  const {countryName,countryImage, countryId, latitude, longtitude} = state;
   const [list, setList] = useState([]);
   const navigate = useNavigate();
   
@@ -82,7 +82,7 @@ const CityMap = (props) => {
             <div className="tile is-6 is-parent">
               <article className="tile is-child box">
               <div className="contain">
-                <img src={country} alt="Avatar" className="img" />
+                <img src={countryImage} alt="Avatar" className="img" />
                 <div className="layover">{countryName}</div>
               </div>
               

@@ -25,7 +25,7 @@ const Navbar = (props) => {
                 <NavLink to='/shop' smooth={true} duration={500} ><li1>Shop</li1></NavLink>
                 <NavLink to='/travelPackages' smooth={true} duration={500} ><li1>Package</li1></NavLink>
                 
-                <Link to='blogs' smooth={true} duration={500} ><li1>Blogs</li1></Link>
+                {/* <Link to='blogs' smooth={true} duration={500} ><li1>Blogs</li1></Link> */}
             </ul>
             <div className="nav-icons">
                 <BiSearch className='icon' style={{ marginRight: '1rem' }} />

@@ -35,7 +35,7 @@ const CityList = () => {
           <div className='destinations'>        
             {allCities.map(city => (
               <NavLink to={{
-                pathname: "/city"}} state={{countryName: city.Name, countryId: city._id, latitude: city._lat, longtitude: city._long}}>
+                pathname: "/city"}} state={{countryName: city.Name,countryImage:city.image, countryId: city._id, latitude: city._lat, longtitude: city._long}}>
                   <div className='destination'>
                     <button className='custom-btn btn-3'>
                     <span>{city.Name}</span></button> 
