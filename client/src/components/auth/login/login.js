@@ -12,7 +12,7 @@ const Login = () => {
   useEffect(()=>{
     // check logged in user
     if(localStorage.getItem("logged-in-user")) {
-      navigate("/home");
+      navigate("/");
     }
   });
 
