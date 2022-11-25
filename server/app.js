@@ -33,6 +33,9 @@ app.post("/pins",bypassCORS, getPins);
 app.get("/cities",bypassCORS, getCities);
 app.get("/getCities", bypassCORS, fetchCities);
 app.post("/addCities", bypassCORS);
+app.get("/fetchAllItems",bypassCORS,getItems);
+
+app.post("/sendreceipt",bypassCORS,sendreceipt);
 
 // error handling 
 
