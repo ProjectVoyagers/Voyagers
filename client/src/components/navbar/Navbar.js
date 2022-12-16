@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BiSearch } from 'react-icons/bi'
+import { BiSearch,BiCartAlt } from 'react-icons/bi'
 import { BsPerson } from 'react-icons/bs'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
@@ -25,9 +25,10 @@ const Navbar = (props) => {
                 <NavLink to='/shop' smooth={true} duration={500} ><li1>Shop</li1></NavLink>
                 <NavLink to='/travelPackages' smooth={true} duration={500} ><li1>Package</li1></NavLink>
                 
-                {/* <Link to='blogs' smooth={true} duration={500} ><li1>Blogs</li1></Link> */}
+                <NavLink to='blogs' smooth={true} duration={500}><li1>Blogs</li1></NavLink>
             </ul>
             <div className="nav-icons">
+            <NavLink to="/cart" > <BiCartAlt className='icon' style={{marginRight:'1rem'}}  /></NavLink>
                 <BiSearch className='icon' style={{ marginRight: '1rem' }} />
                 <NavLink to='/login' smooth={true} duration={500} >
 

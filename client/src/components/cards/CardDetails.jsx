@@ -28,10 +28,10 @@ const CardDetails = (props) => {
                             <h5 className="card-title">{props.title}</h5>
                             <span className="fw-bolder">${props.price}</span>
                         </div>
-                        <div className="">
+                        <div className="d-flex justify-content-start">
                             <p className="card-text">{props.desc}</p>
                         </div>
-                        <div className="d-grid justify-content-end mt-4">
+                        <div className="d-grid justify-content-middle">
                             <button type="button" class="btn btn-success"  disabled={disable}  onClick={() => cde()}>{text}</button>
                         </div>
                     </div>

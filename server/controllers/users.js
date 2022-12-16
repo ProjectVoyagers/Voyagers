@@ -102,6 +102,25 @@ module.exports.fetchAllCities = async(count) => {
   }
 }
 
+
+module.exports.fetchAllItems = async() => {
+  try{
+    const response = await new Promise((resolve,reject) => {
+      db.execute(
+        'SELECT * FROM `shop_view`',
+        (err, results) => {
+          if(err) {
+            reject(err.message);
+          }
+          resolve(results);
+        })
+    });
+    return response; 
+  } catch(error) {
+     throw error;
+  }
+}
+
 module.exports.fetchReqCities = async() => {
   try{
     const response = await new Promise((resolve,reject) => {

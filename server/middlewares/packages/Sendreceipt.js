@@ -10,7 +10,7 @@ const options = require('../../documents/options.js')
 const pdf = require('pdf-creator-node');
 
 module.exports.sendreceipt=async(req,res)=>{
-    const html1 = fs.readFileSync('E:/shop/Shop2/server/documents/doc.html', "utf8");
+    const html1 = fs.readFileSync('E:/project/new_main/Voyagers/server/documents/doc.html', "utf8");
     console.log(req.body);
 
     const {name} = req.body;
