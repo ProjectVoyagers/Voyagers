@@ -14,7 +14,7 @@ const Posts = () => {
       I am telling you, the choice can be painful. Ultimately, the tipping factors were Pahoa/’s equidistant offerings of volcano, jungle and beach on its eastern side. All of which converge beautifully at the doorstep (quite literally) of our final destination, in the community of Leilani Estates.`,
       author: "Antony Blaze ",
       imgUrl:
-        "https://i2.wp.com/wouldbewanderer.com/wp-content/uploads/2022/11/IMG_1198-1024x683.jpg?strip=info&w=2000&ssl=1",
+        "https://i2.wp.com/wouldbewanderer.com/wp-content/uploads/2022/11/IMG_1198-1024x683.jpg?strip=info&w=2000&ssl=1"
     }
   ];
   
