@@ -16,7 +16,9 @@ const { getPackages } = require("./middlewares/packages/FetchPackages");
 const { getPins } = require("./middlewares/packages/FetchPins");
 const { getCities, fetchCities } = require("./middlewares/cities/FetchCities");
 const { getItems } = require("./middlewares/packages/FetchItems");
-const {sendreceipt} = require("./middlewares/packages/Sendreceipt");
+const {sendreceipt} = require("./middlewares/packages/Sendreceipt");const { getItems } = require("./middlewares/packages/FetchItems");
+const { sendreceipt } = require("./middlewares/packages/Sendreceipt");
+
 // request parsers
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -34,9 +36,9 @@ app.post("/pins",bypassCORS, getPins);
 app.get("/cities",bypassCORS, getCities);
 app.get("/getCities", bypassCORS, fetchCities);
 app.post("/addCities", bypassCORS);
-app.get("/fetchAllItems",bypassCORS,getItems);
+app.get("/fetchAllItems", bypassCORS, getItems);
 
-app.post("/sendreceipt",bypassCORS,sendreceipt);
+app.post("/sendreceipt",bypassCORS, sendreceipt);
 
 // error handling 
 

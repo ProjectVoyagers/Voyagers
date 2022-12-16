@@ -12,6 +12,7 @@ import Checkout from "./components/checkout//Checkout";
 import AllCities from "./pages/AllCities";
 import Packages from "./pages/TravelPackages";
 import Itinerary from "./components/itinerary/Itinerary";
+import Posts from "./components/blog/Posts";
 import Thanks from "./components/cart/Thanks";
 //import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 // import "@fortawesome/fontawesome-free/css/all.min.css";import AllCities from "./pages/AllCities";
@@ -41,6 +42,8 @@ const App = (props) => {
         <Route exact path="/city" element={<CityMap />}>
         </Route>
         <Route exact path="/itinerary" element={<Itinerary />}>
+        </Route>
+        <Route exact path="/blogs" element={<Posts />}>
         </Route>
         <Route exact path="/thanks" element={<Thanks/>} ></Route>
       </Routes>
