@@ -6,7 +6,7 @@ import "../components/userProfile/scss/light-bootstrap-dashboard-react.scss?v=2.
 import "../components/userProfile/css/demo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import UserLayout from "layouts/userProfile.js";
+import UserLayout from "../components/userProfile/userProfile.js";
 
 
 const User = () => {
