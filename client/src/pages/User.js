@@ -11,13 +11,14 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import UserLayout from "layouts/userProfile.js";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(
-  <BrowserRouter>
-    <Switch>
-      <Route path="/user" render={(props) => <UserLayout {...props} />} />
-      <Redirect from="/" to="/user/userProfile" />
-    </Switch>
-  </BrowserRouter>
-);
+const User = () => {
+    return(
+        <>
+            <Switch>
+                <Route path="/user" render={(props) => <UserLayout {...props} />} />
+                <Redirect from="/" to="/user/userProfile" />
+        </Switch>  
+        </>
+    )
+}
