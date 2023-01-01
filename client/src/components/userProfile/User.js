@@ -9,14 +9,18 @@ import "./assets/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
 import "./assets/css/demo.css";
 // import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import UserLayout from "./layouts/UserWrapper.js";
+import UserWrapper from "./layouts/UserWrapper.js";
 
 
-root.render(
-  <BrowserRouter>
+const User = () => {
+  return (
+    <BrowserRouter>
     <Routes>
-      <Route path="/user" render={(props) => <UserLayout {...props} />} />
+      <Route path="/user" render={(props) => <UserWrapper {...props} />} />
       <Navigate from="/" to="/user/userProfile" />
     </Routes>
   </BrowserRouter>
-);
+  )
+};
+
+export default User;

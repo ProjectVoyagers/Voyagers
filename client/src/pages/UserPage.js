@@ -10,7 +10,7 @@ import UserLayout from "../components/userProfile/User.js";
 import Navbar from "../components/navbar/Navbar";
 
 
-const User = () => {
+const UserPage = () => {
     return (
         <>
             <Navbar />
@@ -19,4 +19,4 @@ const User = () => {
     )
 };
 
-export default User;
+export default UserPage;

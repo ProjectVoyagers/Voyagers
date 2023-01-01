@@ -5,7 +5,7 @@ import routes from "../routes.js";
 
 import sidebarImage from "../assets/img/sidebar-2.jpg";
 
-function Admin() {
+function UserWrapper() {
   const [image, setImage] = React.useState(sidebarImage);
   const [color, setColor] = React.useState("black");
   const [hasImage, setHasImage] = React.useState(false);
@@ -54,4 +54,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default UserWrapper;
