@@ -39,17 +39,7 @@
   font-size: 13px;
 }
 
-#map {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.map-container {
-  width: 100%;
-  height: 100vh;
-  max-height: 100vh;
-}
+ 
 
 .places-buttons .btn {
   margin-bottom: 30px;
@@ -75,7 +65,7 @@
   top: 180px;
   right: 0;
   width: 64px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(3, 72, 142, 0.6);
   z-index: 1031;
   border-radius: 8px 0 0 8px;
   text-align: center;
@@ -87,23 +77,23 @@
   width: auto;
 }
 .fixed-plugin .dropdown-menu {
-  right: 80px;
-  left: auto;
-  width: 290px;
+  left: 80px;
+  right: auto;
+  width: 255px;
   border-radius: 10px;
   padding: 0 10px;
 }
 .fixed-plugin .dropdown-menu:after,
 .fixed-plugin .dropdown-menu:before {
-  right: 10px;
+  /* right: 100px;
   margin-left: auto;
-  left: auto;
+  left: auto; */
 }
 .fixed-plugin .fa-circle-thin {
   color: #ffffff;
 }
 .fixed-plugin .active .fa-circle-thin {
-  color: #00bbff;
+  color: #1de17f;
 }
 
 .footer-dropdown {
@@ -204,7 +194,7 @@
 }
 
 .fixed-plugin .adjustments-line p {
-  float: left;
+  float: right;
   display: inline-block;
   margin-bottom: 0;
   font-size: 1em;

@@ -9,11 +9,13 @@ import Shop from "./pages/ShopPage.js";
 import CityMap from "./components/map/cityMap";
 
 import Checkout from "./components/checkout//Checkout";
-import AllCities from "./pages/AllCities";
-import Packages from "./pages/TravelPackages";
 import Itinerary from "./components/itinerary/Itinerary";
 import Posts from "./components/blog/Posts";
 import Thanks from "./components/cart/Thanks";
+
+import AllCities from "./pages/AllCities";
+import User from "./pages/UserPage";
+import Packages from "./pages/TravelPackages";
 //import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 // import "@fortawesome/fontawesome-free/css/all.min.css";import AllCities from "./pages/AllCities";
 
@@ -34,6 +36,8 @@ const App = (props) => {
         <Route path="/travelPkgDesc" element={<TravelPkgDesc />}>
         </Route>
         <Route exact path="/shop" element={<Shop />}>
+        </Route>
+        <Route exact path="/user" element={<User />}>
         </Route>
         <Route exact path="/cart" element={<Checkout />}>
         </Route>
