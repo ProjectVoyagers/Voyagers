@@ -1,10 +1,11 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Login from "./components/auth/login/login";
 import Register from "./components/auth/signup/Register";
 import LandingPage from "./pages/landingPage";
 import TravelPkgDesc from "./components/travel_pkg_desc/travel_pkg_desc.js";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./pages/ShopPage.js";
 import CityMap from "./components/map/cityMap";
 
@@ -14,8 +15,10 @@ import Posts from "./components/blog/Posts";
 import Thanks from "./components/cart/Thanks";
 
 import AllCities from "./pages/AllCities";
-import User from "./pages/UserPage";
 import Packages from "./pages/TravelPackages";
+
+import UserPage from "./pages/UserPage";
+
 //import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 // import "@fortawesome/fontawesome-free/css/all.min.css";import AllCities from "./pages/AllCities";
 
@@ -37,8 +40,7 @@ const App = (props) => {
         </Route>
         <Route exact path="/shop" element={<Shop />}>
         </Route>
-        <Route exact path="/user" element={<User />}>
-        </Route>
+        
         <Route exact path="/cart" element={<Checkout />}>
         </Route>
         <Route path="/cities" element={<AllCities />}>
@@ -49,8 +51,13 @@ const App = (props) => {
         </Route>
         <Route exact path="/blogs" element={<Posts />}>
         </Route>
-        <Route exact path="/thanks" element={<Thanks/>} ></Route>
+        <Route exact path="/thanks" element={<Thanks />} ></Route>
+        
+        <Route exact path="/user" element={<UserPage />}>
+        </Route>
       </Routes>
+
+      
     </BrowserRouter>
   );
 }

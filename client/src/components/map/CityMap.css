@@ -1,7 +1,7 @@
 .mapbox-improve-map{
     display: none;
 }
-.card {
+.card_map {
     width: 250px;
     height: 250px;
     display: flex;
@@ -9,7 +9,7 @@
     justify-content: space-around;
   }
   
-label {
+label_map {
     width: max-content;
     color: tomato;
     font-size: 13px;
@@ -17,17 +17,17 @@ label {
     margin: 3px 0;
 }
   
-.desc {
+.desc_map {
     font-size: 14px;
 }
   
-.star {
+.star_map {
     color: gold;
 }
 * {box-sizing: border-box}
 
 /* Container needed to position the overlay. Adjust the width as needed */
-.contain {
+.contain_map {
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -35,14 +35,14 @@ label {
 }
 
 /* Make the image to responsive */
-.img {
+.img_map {
   display: block;
   width: 100%;
   height: auto;
 }
 
 /* The overlay effect - lays on top of the container and over the image */
-.layover {
+.layover_map {
   position: absolute;
   bottom: 0;
   background: rgb(0, 0, 0);
@@ -64,7 +64,7 @@ label {
   text-indent: 1rem;
 }
 
-.btn {
+.btn_map {
   position: relative;
   background: rgb(0,172,238);
   border: none;

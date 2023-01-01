@@ -78,26 +78,26 @@ const CityMap = (props) => {
 
   return (
     <>
-          <div className="tile">
-            <div className="tile is-6 is-parent">
-              <article className="tile is-child box">
-              <div className="contain">
+          <div className="tile_map">
+            <div className="tile_map is-6 is-parent">
+              <article className="tile_map is-child box">
+              <div className="contain_map">
                 <img src={countryImage} alt="Avatar" className="img" />
-                <div className="layover">{countryName}</div>
+                <div className="layover_map">{countryName}</div>
               </div>
               
               {pins.map(p => (
                   <>
-                  <div className="columns is-multiline is-mobile">
-                    <div className="column is-one-quarter">
-                    <p className="title" onClick={() => handleMarkerClick(p._id, p.lat, p.longt)} style={{cursor: "pointer"}} value={p.title}>{p.title}</p>
+                  <div className="columns_map is-multiline is-mobile">
+                    <div className="column_map is-one-quarter">
+                    <p className="title_map" onClick={() => handleMarkerClick(p._id, p.lat, p.longt)} style={{cursor: "pointer"}} value={p.title}>{p.title}</p>
                     </div>
-                    <div className="column is-one-quarter">
+                    <div className="column_map is-one-quarter">
                     </div>
-                    <div className="column is-one-quarter">
+                    <div className="column_map is-one-quarter">
                     </div>
-                    <div className="column is-one-quarter">
-                    <button className="btn" onClick={() => {
+                    <div className="column_map is-one-quarter">
+                    <button className="btn_map" onClick={() => {
                       addCity(p)
                     } 
                       
@@ -107,23 +107,23 @@ const CityMap = (props) => {
                     </div>
                   </div>
                   
-                  <p className="subtitle" value={p.rating}>{p.rating} stars</p>
-                  <span className="tag is-black mx-1">Historial Landmark</span>
-                  <span className="tag is-black mx-1">Sights and Landmark</span>
-                  <span className="tag is-black mb-4">Historic Sights</span>
-                  <div className="content">
+                  <p className="subtitle_map" value={p.rating}>{p.rating} stars</p>
+                  <span className="tag_map is-black mx-1">Historial Landmark</span>
+                  <span className="tag_map is-black mx-1">Sights and Landmark</span>
+                  <span className="tag_map is-black mb-4">Historic Sights</span>
+                  <div className="content_map">
                       <p value={p.descr}>{p.descr}</p>
                   </div>
                   <hr />
                   </>
               ))}
-                  <button className="btn" onClick={() => postItinerary()}>
+                  <button className="btn_map" onClick={() => postItinerary()}>
                       Go to itinerary
                   </button>        
               </article>
             </div>
-            <div className="tile is-parent">
-              <article className="tile is-child">
+            <div className="tile_map is-parent">
+              <article className="tile_map is-child">
               <div>
                 <Map
                   initialViewState={{
@@ -155,12 +155,12 @@ const CityMap = (props) => {
                       closeButton={true}
                       closeOnClick={false}
                       >
-                      <div className="card">
-                            <label>Place</label>
+                      <div className="card_map">
+                            <label_map>Place</label_map>
                             <h4 className="place">{p.title}</h4>
-                            <label>Review</label>
+                            <label_map>Review</label_map>
                             <p className="desc">{p.descr.substring(0,25)}...</p>
-                            <label>Rating</label>
+                            <label_map>Rating</label_map>
                             <div className="stars">
                               {Array(p.rating).fill(<AiOutlineStar className="star" />)}
                             </div>

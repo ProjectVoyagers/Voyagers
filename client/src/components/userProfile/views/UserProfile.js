@@ -1,5 +1,7 @@
 import React from "react";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../assets/css/animate.min.css";
+import "../assets/css/demo.css";
 // react-bootstrap components
 import {
   Badge,

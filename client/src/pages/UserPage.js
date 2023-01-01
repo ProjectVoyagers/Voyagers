@@ -1,20 +1,18 @@
-import { BrowserRouter, Route, Switch, Redirect, Navigate, Routes } from "react-router-dom";
-
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "../components/userProfile/css/animate.min.css";
-// import "../components/userProfile/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
-// import "../components/userProfile/css/demo.css";
-// import "../@fortawesome/fontawesome-free/css/all.min.css";
+ 
 
 import UserLayout from "../components/userProfile/User.js";
 import Navbar from "../components/navbar/Navbar";
+
+import UserWrapper from "../components/userProfile/layouts/UserWrapper.js";
+import User from "../components/userProfile/User.js";
+import UserProfile from "../components/userProfile/views/UserProfile.js";
 
 
 const UserPage = () => {
     return (
         <>
             <Navbar />
-            <UserLayout />
+            <UserProfile />
         </>
     )
 };

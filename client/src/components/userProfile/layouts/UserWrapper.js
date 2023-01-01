@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { useLocation, Route, Switch, Routes } from "react-router-dom";
+import { useLocation, Route, Routes } from "react-router-dom";
 
 import routes from "../routes.js";
-
+import  Sidebar from "../components/Sidebar/Sidebar.js"
 import sidebarImage from "../assets/img/sidebar-2.jpg";
 
 function UserWrapper() {
