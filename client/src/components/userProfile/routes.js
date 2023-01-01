@@ -1,4 +1,4 @@
-import UserProfile from "views/UserProfile.js";
+import UserProfile from "./views/UserProfile.js";
 
 
 const dashboardRoutes = [  

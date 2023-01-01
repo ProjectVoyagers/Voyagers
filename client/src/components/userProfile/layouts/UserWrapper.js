@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { useLocation, Route, Switch } from "react-router-dom";
+import { useLocation, Route, Switch, Routes } from "react-router-dom";
 
-import routes from "routes.js";
+import routes from "../routes.js";
 
-import sidebarImage from "assets/img/sidebar-2.jpg";
+import sidebarImage from "../assets/img/sidebar-2.jpg";
 
 function Admin() {
   const [image, setImage] = React.useState(sidebarImage);
@@ -45,7 +45,7 @@ function Admin() {
         <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
         <div className="main-panel" ref={mainPanel}>
           <div className="content">
-            <Switch>{getRoutes(routes)}</Switch>
+            <Routes>{getRoutes(routes)}</Routes>
           </div>
         </div>
       </div>
