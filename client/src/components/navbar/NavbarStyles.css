@@ -17,13 +17,17 @@
 }
 .logo{
     padding-left: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
 }
+
 .navbar-bg1 {
     background-color: #a9d5ef;
 }
 
 .nav-menu1 {
     display: flex;
+    font-size: 2rem;
 }
 
 .navbar_links {

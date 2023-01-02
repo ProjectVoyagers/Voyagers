@@ -17,7 +17,8 @@ const Navbar = (props) => {
     return (
         <div name='home' className={nav ? 'navbar_voyagers navbar-bg1' : 'navbar_voyagers'}>
             <div className={nav ? 'logo_dark' : 'logo'}>
-                <h2>Voyagers</h2>
+                <image src="%PUBLIC_URL%/logo.png"></image>
+                {/* <div>Voyagers</div> */}
             </div>
             <ul className="nav-menu1">
                 <NavLink to='/' smooth={true} duration={500} ><div className='navbar_links'> <li>Home</li> </div></NavLink>
