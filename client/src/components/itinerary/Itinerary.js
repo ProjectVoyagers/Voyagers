@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./itinerary.css";
 // import axios from "axios";
 import {useLocation} from 'react-router-dom';
+import { Row } from "react-bootstrap";
 
 const Itinerary = (props) => {
   const [city, setCities] = useState([]);
@@ -39,8 +40,8 @@ const Itinerary = (props) => {
       <section className="timeline1">
         <div className="container">
           {city.map((c, index) => (
-            <div className="row">
-              <a className="itn_attr" href="">
+            <Row className="itn_row">
+              <a  href="">
                 <div className={ (index+1) % 2 !== 0 ? "country-block col-sm-6" : "country-block reverse col-sm-6 col-sm-push-6"}>
                   <i className="jp"></i>
                   {c.title}
@@ -49,7 +50,7 @@ const Itinerary = (props) => {
               <div className={(index+1) % 2 !== 0 ? "date-block col-sm-6" : "date-block reverse col-sm-6 col-sm-pull-6"}>
                 <div>11 April - 28 April</div>
               </div>
-            </div>
+            </Row>
           ))}
         </div>
         </section>

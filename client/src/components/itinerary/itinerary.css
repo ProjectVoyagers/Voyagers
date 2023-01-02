@@ -67,11 +67,12 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.timeline1 .row {
+.itn_row {
   margin-bottom: 50px;
 }
+
 @media only screen and (min-width: 768px) {
-  .timeline1 .row {
+  .timeline1 itn_row {
     margin-bottom: 30px;
   }
 }
@@ -97,7 +98,7 @@
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-.timeline1 .country-block i {
+.timeline1 .country-block .itn_attr {
   content: "";
   background-position: center;
   background-size: 100%;

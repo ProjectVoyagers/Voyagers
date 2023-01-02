@@ -1,15 +1,13 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/css/animate.min.css";
 import "../assets/css/demo.css";
-// react-bootstrap components
+// react-bootstrap components: 
 import {
   Badge,
   Button,
   Card,
   Form,
-  Navbar,
-  Nav,
   Container,
   Row,
   Col
