@@ -19,7 +19,7 @@ const Hero = (props) => {
                         <input type="text" placeholder='Search Destinations' />
                     </div>
                     <div>
-                        <button><AiOutlineSearch className='icon'/></button>
+                        <button className='searchButton'><AiOutlineSearch className='icon'/></button>
                     </div>
                 </form>
             </div>

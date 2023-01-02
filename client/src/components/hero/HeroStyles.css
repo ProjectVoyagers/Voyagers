@@ -23,7 +23,7 @@
 
 .hero .content1 {
     position: absolute;
-    top: 10%;
+    top: 5%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -44,7 +44,7 @@
     border: 1px solid #ccc;
     padding: 4px;
     border-radius: 8px;
-    max-width: 700px;
+    max-width: 300px;
     max-height: 70px;
     width: 100%;
     margin: 2rem auto;
@@ -53,13 +53,19 @@
 .form1 input[type=text] {
     border: transparent;
     background-color: transparent;
-    width: 400px;
+    width: auto;
     font-size: 1.2rem;
     font-family: 'Poppins',sans-serif;
 }
 
 .form1 input[type=text]:focus {
     outline: none;
+    position: relative;
+}
+
+.form1 .searchButton{
+    position: relative;
+    right: 0;
 }
 
 @media screen and (max-width: 940px) {
