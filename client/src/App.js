@@ -33,8 +33,8 @@ const App = (props) => {
       <Navbar />
         <Routes>
           <Route exact path="/" element={<LandingPage />}> </Route>
-          {/* <Route exact path="/login" element={<Login />}> </Route>
-          <Route path="/register" element={<Register />}> </Route> */}
+          <Route exact path="/login" element={<Login />}> </Route>
+          <Route path="/register" element={<Register />}> </Route>
           <Route path="/travelPackages" element={<Packages />}> </Route>
           <Route path="/travelPkgDesc" element={<TravelPkgDesc />}> </Route>
           <Route exact path="/shop" element={<Shop />}> </Route>        

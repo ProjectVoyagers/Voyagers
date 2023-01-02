@@ -42,7 +42,7 @@ export default function TravelPackages() {
   return (
     <Section id="TravelPackages">
       <div className="title">
-        <h2 style={{ "margin-top": "4rem" }}>Travel Packages</h2>
+        <h2 style={{ "margin-top": "80px" }}>Travel Packages</h2>
       </div>
       {/* <div className="packages">
         <ul>
