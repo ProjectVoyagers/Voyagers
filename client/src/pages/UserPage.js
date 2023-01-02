@@ -11,7 +11,6 @@ import UserProfile from "../components/userProfile/views/UserProfile.js";
 const UserPage = () => {
     return (
         <>
-            <Navbar />
             <UserProfile />
         </>
     )

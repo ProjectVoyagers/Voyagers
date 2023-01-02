@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
-import "./itinerary.css";
-// import axios from "axios";
 import {useLocation} from 'react-router-dom';
+
 import { Row } from "react-bootstrap";
+// import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import './bootstrap-3.3.7-dist/css/bootstrap.min.css';
+import "./itinerary.css";
+
+
 
 const Itinerary = (props) => {
   const [city, setCities] = useState([]);

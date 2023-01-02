@@ -4,7 +4,6 @@ import Shop from "../components/shop/Shop.js";
 const Packages = () => {
     return(
         <>
-            <Navbar />
             <Shop />
         </>
     )
