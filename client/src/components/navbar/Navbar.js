@@ -15,7 +15,7 @@ const Navbar = (props) => {
     const handleNav = () => setNav(!nav)
 
     return (
-        <div name='home' className={nav ? 'navbar navbar-bg1' : 'navbar'}>
+        <div name='home' className={nav ? 'navbar_voyagers navbar-bg1' : 'navbar_voyagers'}>
             <div className={nav ? 'logo_dark' : 'logo'}>
                 <h2>Voyagers</h2>
             </div>

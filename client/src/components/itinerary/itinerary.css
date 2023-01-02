@@ -5,12 +5,6 @@
   background: #86e7f0;
 }
 
-
-/* ul {
-  list-style: none;
-  padding-left: 0;
-} */
-
 .itn_attr {
   text-decoration: none;
 }
@@ -18,7 +12,8 @@
 .itn_header {
   font-size: 2.3rem;
   font-weight: 500;
-  margin: 0;
+  margin-top: auto;
+  /* margin: 0; */
   font-family: "Libre Baskerville", serif;
   color: #545454;
 }
@@ -37,6 +32,7 @@
   background: #fff;
   text-align: center;
   padding: 35px 0;
+  margin-top: 80px;
 }
 .white-stripe p {
   margin-bottom: 0;
@@ -68,7 +64,7 @@
 }
 
 .itn_row {
-  height: 100px;
+  /* height: 100px; */
   margin-bottom: 50px;
 }
 
@@ -90,8 +86,9 @@
   z-index: -2;
 }
 .timeline1 .country-block {
-  padding: 50px 0;
+  padding: 50px 50px;
   font-size: 3rem;
+  margin-bottom: 60px;
   text-transform: uppercase;
   color: #fff;
   background: rgba(84, 84, 84, 0.6);
@@ -200,6 +197,7 @@
 .timeline1 .date-block > div {
   position: relative;
   font-family: "Libre Baskerville", serif;
+  font-size: large;
   background-color: #fff;
   padding: 10px 30px 10px 30px;
   border: 2px solid #7d7d7d;

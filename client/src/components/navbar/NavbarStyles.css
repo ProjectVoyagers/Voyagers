@@ -1,6 +1,7 @@
-.navbar {
+.navbar_voyagers {
     width: 100%;
     height: 80px;
+    top:0%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,7 +42,7 @@
 }
 
 .icon1 {
-    font-size: 1.5rem;
+    font-size: 5rem;
     cursor: pointer;
 }
 
