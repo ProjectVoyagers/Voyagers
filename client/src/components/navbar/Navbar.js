@@ -20,12 +20,12 @@ const Navbar = (props) => {
                 <h2>Voyagers</h2>
             </div>
             <ul className="nav-menu1">
-                <NavLink to='/' smooth={true} duration={500} ><li1>Home</li1></NavLink>
-                <NavLink to='/cities' smooth={true} duration={500} ><li1>Destinations</li1></NavLink>
-                <NavLink to='/shop' smooth={true} duration={500} ><li1>Shop</li1></NavLink>
-                <NavLink to='/travelPackages' smooth={true} duration={500} ><li1>Package</li1></NavLink>
+                <NavLink to='/' smooth={true} duration={500} ><div className='navbar_links'> <li>Home</li> </div></NavLink>
+                <NavLink to='/cities' smooth={true} duration={500} > <div className='navbar_links'> <li>Destinations</li> </div> </NavLink>
+                <NavLink to='/shop' smooth={true} duration={500} > <div className='navbar_links'>  <li>Shop</li> </div></NavLink>
+                <NavLink to='/travelPackages' smooth={true} duration={500} > <div className='navbar_links'> <li>Package</li> </div> </NavLink>
                 
-                <NavLink to='blogs' smooth={true} duration={500}><li1>Blogs</li1></NavLink>
+                <NavLink to='blogs' smooth={true} duration={500}> <div className='navbar_links'> <li>Blogs</li> </div></NavLink>
             </ul>
             <div className="nav-icons">
             <NavLink to="/cart" > <BiCartAlt className='icon' style={{marginRight:'1rem'}}  /></NavLink>
