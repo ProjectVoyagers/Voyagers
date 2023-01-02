@@ -16,7 +16,6 @@ const { getPackages } = require("./middlewares/packages/FetchPackages");
 const { getPins } = require("./middlewares/packages/FetchPins");
 const { getCities, fetchCities } = require("./middlewares/cities/FetchCities");
 const { getItems } = require("./middlewares/packages/FetchItems");
-const {sendreceipt} = require("./middlewares/packages/Sendreceipt");const { getItems } = require("./middlewares/packages/FetchItems");
 const { sendreceipt } = require("./middlewares/packages/Sendreceipt");
 
 // request parsers
