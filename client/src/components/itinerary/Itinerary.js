@@ -46,11 +46,12 @@ const Itinerary = (props) => {
           {city.map((c, index) => (
             <Row className="itn_row">
               <a  href="">
-                <div className={ (index+1) % 2 !== 0 ? "country-block col-sm-6" : "country-block reverse col-sm-6 col-sm-push-6"}>
+                
+              </a>
+              <div className={ (index+1) % 2 !== 0 ? "country-block col-sm-6" : "country-block reverse col-sm-6 col-sm-push-6"}>
                   <i className="jp"></i>
                   {c.title}
-                </div>
-              </a>
+              </div>
               <div className={(index+1) % 2 !== 0 ? "date-block col-sm-6" : "date-block reverse col-sm-6 col-sm-pull-6"}>
                 <div>11 April - 28 April</div>
               </div>

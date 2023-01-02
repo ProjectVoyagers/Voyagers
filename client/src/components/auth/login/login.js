@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {useNavigate } from "react-router-dom";
-import "./login.css"
+import "./login.css"  //only bulma
 
 const Login = () => {
   const [usernameORemail, setusernameORemail] = useState("");
