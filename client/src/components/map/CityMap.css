@@ -35,14 +35,14 @@ label_map {
 }
 
 /* Make the image to responsive */
-.img_map {
+.img {
   display: block;
   width: 100%;
   height: auto;
 }
 
 /* The overlay effect - lays on top of the container and over the image */
-.layover_map {
+.layover {
   position: absolute;
   bottom: 0;
   background: rgb(0, 0, 0);

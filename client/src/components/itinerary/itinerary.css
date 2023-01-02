@@ -1,23 +1,21 @@
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css";
 
-html {
+.itinerary_wrapper {
   font-size: 62.5%;
-}
-
-body {
   background: #86e7f0;
 }
 
-ul {
+
+/* ul {
   list-style: none;
   padding-left: 0;
-}
+} */
 
-a {
+.itn_attr {
   text-decoration: none;
 }
 
-h3 {
+.itn_header {
   font-size: 2.3rem;
   font-weight: 500;
   margin: 0;

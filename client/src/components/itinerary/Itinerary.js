@@ -30,16 +30,17 @@ const Itinerary = (props) => {
 
   return (
     <>
+      <div className="itinerary_wrapper">
       <section className="white-stripe arrow">
         <div className="container">
-          <h3>Destinations</h3>
+          <h3 className="itn_header">Destinations</h3>
         </div>
       </section>
       <section className="timeline1">
         <div className="container">
           {city.map((c, index) => (
             <div className="row">
-              <a href="">
+              <a className="itn_attr" href="">
                 <div className={ (index+1) % 2 !== 0 ? "country-block col-sm-6" : "country-block reverse col-sm-6 col-sm-push-6"}>
                   <i className="jp"></i>
                   {c.title}
@@ -51,7 +52,8 @@ const Itinerary = (props) => {
             </div>
           ))}
         </div>
-      </section>
+        </section>
+        </div>
     </>
   );
 };

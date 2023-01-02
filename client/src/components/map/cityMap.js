@@ -83,7 +83,7 @@ const CityMap = (props) => {
               <article className="tile_map is-child box">
               <div className="contain_map">
                 <img src={countryImage} alt="Avatar" className="img" />
-                <div className="layover_map">{countryName}</div>
+                <div className="layover">{countryName}</div>
               </div>
               
               {pins.map(p => (
@@ -155,12 +155,12 @@ const CityMap = (props) => {
                       closeButton={true}
                       closeOnClick={false}
                       >
-                      <div className="card_map">
-                            <label_map>Place</label_map>
+                          <div className="card_map">
+                            <div className='label_map'> <label>Place</label></div>                            
                             <h4 className="place">{p.title}</h4>
-                            <label_map>Review</label_map>
-                            <p className="desc">{p.descr.substring(0,25)}...</p>
-                            <label_map>Rating</label_map>
+                            <div className='label_map'> <label>Review</label></div>                            
+                            <p className="desc">{p.descr.substring(0, 25)}...</p>
+                            <div className='label_map'><label>Rating</label> </div>
                             <div className="stars">
                               {Array(p.rating).fill(<AiOutlineStar className="star" />)}
                             </div>
