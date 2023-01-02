@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { BiSearch } from 'react-icons/bi'
+import { BiSearch,BiCartAlt } from 'react-icons/bi'
 import { BsPerson } from 'react-icons/bs'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 import { Link } from 'react-scroll'
-
+// import image from '../../../public/logo.png'
 import './NavbarStyles.css'
 import { NavLink } from 'react-router-dom'
 
@@ -15,24 +15,29 @@ const Navbar = (props) => {
     const handleNav = () => setNav(!nav)
 
     return (
-        <div name='home' className={nav ? 'navbar navbar-bg1' : 'navbar'}>
-            <div className={nav ? 'logo dark' : 'logo'}>
-                <h2>Voyagers</h2>
+        <div name='home' className={nav ? 'navbar_voyagers navbar-bg1' : 'navbar_voyagers'}>
+            <div className={nav ? 'logo_dark' : 'logo'}>
+                <img src="logo.png" width = '32px'></img>
+                <div className='logo_title'>Voyagers</div>
             </div>
             <ul className="nav-menu1">
-                <NavLink to='/' smooth={true} duration={500} ><li1>Home</li1></NavLink>
-                <NavLink to='/cities' smooth={true} duration={500} ><li1>Destinations</li1></NavLink>
-                <NavLink to='/shop' smooth={true} duration={500} ><li1>Shop</li1></NavLink>
-                <NavLink to='/travelPackages' smooth={true} duration={500} ><li1>Package</li1></NavLink>
-                {/* <Link to='/travelPackages' smooth={true} duration={500} ><li>Package</li></Link> */}
-                <Link to='blogs' smooth={true} duration={500} ><li1>Blogs</li1></Link>
+                <NavLink to='/' smooth={true} duration={500} ><div className='navbar_links'> <li>Home</li> </div></NavLink>
+                <NavLink to='/cities' smooth={true} duration={500} > <div className='navbar_links'> <li>Destinations</li> </div> </NavLink>
+                <NavLink to='/shop' smooth={true} duration={500} > <div className='navbar_links'>  <li>Shop</li> </div></NavLink>
+                <NavLink to='/travelPackages' smooth={true} duration={500} > <div className='navbar_links'> <li>Package</li> </div> </NavLink>
+                
+                <NavLink to='blogs' smooth={true} duration={500}> <div className='navbar_links'> <li>Blogs</li> </div></NavLink>
             </ul>
             <div className="nav-icons">
-                <BiSearch className='icon' style={{ marginRight: '1rem' }} />
-                <BsPerson className='icon' />
+            <NavLink to="/cart" > <BiCartAlt className='icon1' style={{marginRight:'1rem'}}  /></NavLink>
+                <BiSearch className='icon1' style={{ marginRight: '1rem' }} />
+                <NavLink to='/login' smooth={true} duration={500} >
+
+                    <BsPerson className='icon1' />
+                    </NavLink>
             </div>
             <div className="hamburger" onClick={handleNav}>
-                {!nav ? (<HiOutlineMenuAlt4 className='icon' />) : (<AiOutlineClose style={{ color: '#000' }} className='icon' />)}
+                {!nav ? (<HiOutlineMenuAlt4 className='icon1' />) : (<AiOutlineClose style={{ color: '#000' }} className='icon' />)}
 
             </div>
 

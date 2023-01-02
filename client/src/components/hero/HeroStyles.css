@@ -1,6 +1,6 @@
 .hero {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     color: #fff;
     position: relative;
 }
@@ -23,15 +23,16 @@
 
 .hero .content1 {
     position: absolute;
-    top: 0;
+    top: 5%;
     height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    width: 100%;
+    width: 64%;
     margin: auto;
     padding: 1rem;
+    left: 18%;
 }
 
 .form1 {
@@ -43,7 +44,7 @@
     border: 1px solid #ccc;
     padding: 4px;
     border-radius: 8px;
-    max-width: 700px;
+    max-width: 300px;
     max-height: 70px;
     width: 100%;
     margin: 2rem auto;
@@ -52,13 +53,19 @@
 .form1 input[type=text] {
     border: transparent;
     background-color: transparent;
-    width: 400px;
+    width: auto;
     font-size: 1.2rem;
     font-family: 'Poppins',sans-serif;
 }
 
 .form1 input[type=text]:focus {
     outline: none;
+    position: relative;
+}
+
+.form1 .searchButton{
+    position: relative;
+    right: 0;
 }
 
 @media screen and (max-width: 940px) {

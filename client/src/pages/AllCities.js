@@ -4,7 +4,6 @@ import Navbar from "../components/navbar/Navbar"
 const AllCities = () => {
     return(
         <>
-            <Navbar />
             <CityList />
         </>
     )

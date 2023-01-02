@@ -1,7 +1,7 @@
 .mapbox-improve-map{
     display: none;
 }
-.card {
+.card_map {
     width: 250px;
     height: 250px;
     display: flex;
@@ -9,7 +9,7 @@
     justify-content: space-around;
   }
   
-label {
+label_map {
     width: max-content;
     color: tomato;
     font-size: 13px;
@@ -17,17 +17,17 @@ label {
     margin: 3px 0;
 }
   
-.desc {
+.desc_map {
     font-size: 14px;
 }
   
-.star {
+.star_map {
     color: gold;
 }
 * {box-sizing: border-box}
 
 /* Container needed to position the overlay. Adjust the width as needed */
-.contain {
+.contain_map {
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -62,4 +62,40 @@ label {
   opacity: 1;
   text-align: left;
   text-indent: 1rem;
+}
+
+.btn_map {
+  position: relative;
+  background: rgb(0,172,238);
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn_map:after {
+  content: "";
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.btn_map:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
 }

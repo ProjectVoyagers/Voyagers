@@ -15,10 +15,7 @@ const Shop = ({ props }) => {
             <CartProvider>
                 <div className='container-fluid'>
                     <div className="nav-content">
-                        <ul className="navbar-nav m-auto">
-                            <li className="mb-2 m-auto mb-lg-0"><h3>Shop</h3></li>
-                            
-                        </ul>
+                        
                     </div>
                     <div className="container py-4">
                         <div className="row">

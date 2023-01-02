@@ -1,40 +1,36 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-// import Destination1 from "../../Assets/Destination1.png";
-// import Destination2 from "../../Assets/Destination2.png";
-// import Destination3 from "../../Assets/Destination3.png";
-// import Destination4 from "../../Assets/Destination4.png";
-// import Destination5 from "../../Assets/Destination5.png";
-// import Destination6 from "../../Assets/Destination6.png";
+
 import info1 from "../../Assets/info1.png";
 import info2 from "../../Assets/info2.png";
 import info3 from "../../Assets/info3.png";
-import {NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function TravelPackages() {
-
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const fetchData = async() => {
+    const fetchData = async () => {
       await axios({
-        method: 'get',
+        method: "get",
         url: "http://localhost:5000/fetchAllPackages",
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        responseType: 'json',
-      }).then((response) => {
-        setData(response.data.data);
-        console.log(response.data.data);
-      }).catch((err) => {
-        console.log(err);
+        responseType: "json",
       })
-    }
+        .then((response) => {
+          setData(response.data.data);
+          console.log(response.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
     fetchData();
-  },[]);
-  
+  }, []);
+
   // const packages = [
   //   "The Weekend Break",
   //   "The Package Holiday",
@@ -46,7 +42,7 @@ export default function TravelPackages() {
   return (
     <Section id="TravelPackages">
       <div className="title">
-        <h2 style={{"margin-top": "4rem"}}>Travel Packages</h2>
+        <h2 style={{ "margin-top": "80px" }}>Travel Packages</h2>
       </div>
       {/* <div className="packages">
         <ul>
@@ -65,25 +61,35 @@ export default function TravelPackages() {
       <div className="destinations">
         {data.map((destination) => {
           return (
-            <NavLink to={{
-              pathname: "/travelPkgDesc"}} state={{title: destination.title}}>
-            <div className="destination">
-              <img src={destination.image} alt="" />
-              <h3>{destination.title}</h3>
-              <p>{destination.subTitle}</p>
-              <div className="info">
-                <div className="services">
-                  <img src={info1} alt="" />
-                  <img src={info2} alt="" />
-                  <img src={info3} alt="" />
+            <NavLink
+              to={{
+                pathname: "/travelPkgDesc",
+              }}
+              state={{
+                title: destination.title,
+                subTitle: destination.subTitle,
+                image: destination.image,
+                cost: destination.cost,
+                duration: destination.duration,
+              }}
+            >
+              <div className="destination">
+                <img src={destination.image} alt="" />
+                <h3>{destination.title}</h3>
+                <p>{destination.subTitle}</p>
+                <div className="info">
+                  <div className="services">
+                    <img src={info1} alt="" />
+                    <img src={info2} alt="" />
+                    <img src={info3} alt="" />
+                  </div>
+                  <h4>{"BDT " + destination.cost}</h4>
                 </div>
-                <h4>{"BDT " + destination.cost}</h4>
+                <div className="distance">
+                  <span></span>
+                  <span>{destination.duration}</span>
+                </div>
               </div>
-              <div className="distance">
-                <span></span>
-                <span>{destination.duration}</span>
-              </div>
-            </div>
             </NavLink>
           );
         })}

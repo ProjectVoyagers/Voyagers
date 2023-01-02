@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {useNavigate } from "react-router-dom";
-import "./login.css"
+import "./login.css"  //only bulma
 
 const Login = () => {
   const [usernameORemail, setusernameORemail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    // check logged in user
+    if(localStorage.getItem("logged-in-user")) {
+      navigate("/");
+    }
+  });
 
   const Auth = async (e) => {
     e.preventDefault();
@@ -22,8 +29,11 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
+      }).then((res) => {
+        console.log(res);
+        localStorage.setItem('logged-in-user', JSON.stringify(res));
+        navigate("/");
       })
-      navigate("/");
     } catch (error) {
       if (error.response) {
         setMsg('Invalid username or password!');

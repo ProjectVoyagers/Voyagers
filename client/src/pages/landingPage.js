@@ -28,7 +28,6 @@ const LandingPage = () => {
       } ,[])
     return (
         <>
-            <Navbar />
             <Hero />
             <Categories />
             <About />

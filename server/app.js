@@ -14,7 +14,9 @@ const {notFoundHandler, errorHandler} = require("./middlewares/common/errorHandl
 const { Router } = require("express");
 const { getPackages } = require("./middlewares/packages/FetchPackages");
 const { getPins } = require("./middlewares/packages/FetchPins");
-const { getCities } = require("./middlewares/cities/FetchCities");
+const { getCities, fetchCities } = require("./middlewares/cities/FetchCities");
+const { getItems } = require("./middlewares/packages/FetchItems");
+const { sendreceipt } = require("./middlewares/packages/Sendreceipt");
 
 // request parsers
 app.use(express.urlencoded({extended: true}));
@@ -31,6 +33,11 @@ app.post("/login",bypassCORS, login);
 app.get("/fetchAllPackages", bypassCORS, getPackages);
 app.post("/pins",bypassCORS, getPins);
 app.get("/cities",bypassCORS, getCities);
+app.get("/getCities", bypassCORS, fetchCities);
+app.post("/addCities", bypassCORS);
+app.get("/fetchAllItems", bypassCORS, getItems);
+
+app.post("/sendreceipt",bypassCORS, sendreceipt);
 
 // error handling 
 

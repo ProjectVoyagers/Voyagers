@@ -7,21 +7,48 @@ import "./CityMap.css"
 import axios from 'axios';
 import country from "../../Assets/Destination2.png";
 import { useLocation } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 const CityMap = (props) => {
   const location = useLocation();
   const { state } = location;
   const [pins, setPins] = useState([]);
   const [showPopup, setShowPopup] = useState(null);
-  const {countryName, countryId, latitude, longtitude} = state;
-
+  const {countryName,countryImage, countryId, latitude, longtitude} = state;
+  const [list, setList] = useState([]);
+  const navigate = useNavigate();
+  
   const [viewport, setViewport] = useState({
     latitude: latitude,
     longitude: longtitude,
     zoom: 6,
   });
-  
 
+  const addCity = (item) => {
+    if(list.indexOf(item) !== -1) return;
+    setList([...list, item]);
+  }
+
+
+  const postItinerary = () => {
+    // e.preventDefault()
+    console.log(list);
+    try{
+      // await axios({
+      //   method: 'POST',
+      //   url: 'http://localhost:5000/addCities',
+      //   headers: {
+      //     'Content-Type': 'application/x-www-form-urlencoded',
+      //   },
+      //   data: {
+      //     list: list 
+      //   }
+      // })
+      navigate('/itinerary',{state:{list: list}});
+    } catch(err){
+      console.log(err);
+    }
+  } 
   const handleMarkerClick = (id, lat, long) => {
     setShowPopup(id);
     setViewport({ ...viewport, latitude: lat, longitude: long });
@@ -40,7 +67,7 @@ const CityMap = (props) => {
               id: countryId
             }
           })
-          console.log(res.data.data)
+          // console.log(res.data.data)
           setPins(res.data.data);
         } catch(err){
           console.log(err);
@@ -51,42 +78,52 @@ const CityMap = (props) => {
 
   return (
     <>
-          <div class="tile">
-            <div class="tile is-6 is-parent">
-              <article class="tile is-child box">
-              <div class="contain">
-                <img src={country} alt="Avatar" class="img" />
-                <div class="layover">{countryName}</div>
+          <div className="tile_map">
+            <div className="tile_map is-6 is-parent">
+              <article className="tile_map is-child box">
+              <div className="contain_map">
+                <img src={countryImage} alt="Avatar" className="img" />
+                <div className="layover">{countryName}</div>
               </div>
+              
               {pins.map(p => (
                   <>
-                  <div class="columns is-multiline is-mobile">
-                    <div class="column is-one-quarter">
-                    <p class="title" onClick={() => handleMarkerClick(p._id, p.lat, p.longt)} style={{cursor: "pointer"}}>{p.title}</p>
+                  <div className="columns_map is-multiline is-mobile">
+                    <div className="column_map is-one-quarter">
+                    <p className="title_map" onClick={() => handleMarkerClick(p._id, p.lat, p.longt)} style={{cursor: "pointer"}} value={p.title}>{p.title}</p>
                     </div>
-                    <div class="column is-one-quarter">
+                    <div className="column_map is-one-quarter">
                     </div>
-                    <div class="column is-one-quarter">
+                    <div className="column_map is-one-quarter">
                     </div>
-                    <div class="column is-one-quarter">
-                    <button class="button is-black">Save</button>
+                    <div className="column_map is-one-quarter">
+                    <button className="btn_map" onClick={() => {
+                      addCity(p)
+                    } 
+                      
+                      }>
+                        Save
+                        </button>
                     </div>
                   </div>
                   
-                  <p class="subtitle">{p.rating} stars</p>
-                  <span class="tag is-black mx-1">Historial Landmark</span>
-                  <span class="tag is-black mx-1">Sights and Landmarks</span>
-                  <span class="tag is-black mb-4">Historic Sights</span>
-                  <div class="content">
-                      <p>{p.descr}</p>
+                  <p className="subtitle_map" value={p.rating}>{p.rating} stars</p>
+                  <span className="tag_map is-black mx-1">Historial Landmark</span>
+                  <span className="tag_map is-black mx-1">Sights and Landmark</span>
+                  <span className="tag_map is-black mb-4">Historic Sights</span>
+                  <div className="content_map">
+                      <p value={p.descr}>{p.descr}</p>
                   </div>
                   <hr />
                   </>
-              ))}     
+              ))}
+                  <button className="btn_map" onClick={() => postItinerary()}>
+                      Go to itinerary
+                  </button>        
               </article>
             </div>
-            <div class="tile is-parent">
-              <article class="tile is-child">
+            <div className="tile_map is-parent">
+              <article className="tile_map is-child">
               <div>
                 <Map
                   initialViewState={{
@@ -118,12 +155,12 @@ const CityMap = (props) => {
                       closeButton={true}
                       closeOnClick={false}
                       >
-                      <div className="card">
-                            <label>Place</label>
+                          <div className="card_map">
+                            <div className='label_map'> <label>Place</label></div>                            
                             <h4 className="place">{p.title}</h4>
-                            <label>Review</label>
-                            <p className="desc">{p.descr.substring(0,25)}...</p>
-                            <label>Rating</label>
+                            <div className='label_map'> <label>Review</label></div>                            
+                            <p className="desc">{p.descr.substring(0, 25)}...</p>
+                            <div className='label_map'><label>Rating</label> </div>
                             <div className="stars">
                               {Array(p.rating).fill(<AiOutlineStar className="star" />)}
                             </div>
