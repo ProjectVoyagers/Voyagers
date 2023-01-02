@@ -37,12 +37,12 @@ const Itinerary = (props) => {
     <>
       <div className="itinerary_wrapper">
       <section className="white-stripe arrow">
-        <div className="container">
+        <div className="container_itn">
           <h3 className="itn_header">Destinations</h3>
         </div>
       </section>
       <section className="timeline1">
-        <div className="container">
+        <div className="container_itn">
           {city.map((c, index) => (
             <Row className="itn_row">
               <a  href="">
