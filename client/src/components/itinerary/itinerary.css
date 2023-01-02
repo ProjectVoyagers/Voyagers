@@ -31,7 +31,7 @@
 .white-stripe {
   background: #fff;
   text-align: center;
-  padding: 35px 0;
+  padding: 25px 0;
   margin-top: 80px;
 }
 .white-stripe p {
@@ -48,12 +48,12 @@
   top: 100%;
   width: 0;
   height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #fff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #fff;
   clear: both;
   margin-left: -20px;
-  z-index: 10;
+  z-index: 10;  
 }
 
 .timeline1 {
