@@ -6,7 +6,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 import { Link } from 'react-scroll'
-
+// import image from '../../../public/logo.png'
 import './NavbarStyles.css'
 import { NavLink } from 'react-router-dom'
 
@@ -17,8 +17,8 @@ const Navbar = (props) => {
     return (
         <div name='home' className={nav ? 'navbar_voyagers navbar-bg1' : 'navbar_voyagers'}>
             <div className={nav ? 'logo_dark' : 'logo'}>
-                <image src="%PUBLIC_URL%/logo.png"></image>
-                {/* <div>Voyagers</div> */}
+                <img src="logo.png" width = '32px'></img>
+                <div className='logo_title'>Voyagers</div>
             </div>
             <ul className="nav-menu1">
                 <NavLink to='/' smooth={true} duration={500} ><div className='navbar_links'> <li>Home</li> </div></NavLink>
@@ -29,15 +29,15 @@ const Navbar = (props) => {
                 <NavLink to='blogs' smooth={true} duration={500}> <div className='navbar_links'> <li>Blogs</li> </div></NavLink>
             </ul>
             <div className="nav-icons">
-            <NavLink to="/cart" > <BiCartAlt className='icon' style={{marginRight:'1rem'}}  /></NavLink>
-                <BiSearch className='icon' style={{ marginRight: '1rem' }} />
+            <NavLink to="/cart" > <BiCartAlt className='icon1' style={{marginRight:'1rem'}}  /></NavLink>
+                <BiSearch className='icon1' style={{ marginRight: '1rem' }} />
                 <NavLink to='/login' smooth={true} duration={500} >
 
-                    <BsPerson className='icon' />
+                    <BsPerson className='icon1' />
                     </NavLink>
             </div>
             <div className="hamburger" onClick={handleNav}>
-                {!nav ? (<HiOutlineMenuAlt4 className='icon' />) : (<AiOutlineClose style={{ color: '#000' }} className='icon' />)}
+                {!nav ? (<HiOutlineMenuAlt4 className='icon1' />) : (<AiOutlineClose style={{ color: '#000' }} className='icon' />)}
 
             </div>
 
