@@ -1,7 +1,10 @@
 .mapbox-improve-map{
     display: none;
 }
-.card_map {
+.left_part{
+  max-width: 50%;
+}
+.left_part .card_map {
     width: 250px;
     height: 250px;
     display: flex;
@@ -9,7 +12,7 @@
     justify-content: space-around;
   }
   
-label_map {
+.label_map {
     width: max-content;
     color: tomato;
     font-size: 13px;
@@ -17,11 +20,11 @@ label_map {
     margin: 3px 0;
 }
   
-.desc_map {
+.layover .desc_map {
     font-size: 14px;
 }
   
-.star_map {
+.layover .star_map {
     color: gold;
 }
 * {box-sizing: border-box}
@@ -36,8 +39,8 @@ label_map {
 
 /* Make the image to responsive */
 .img {
-  display: block;
-  width: 100%;
+  /* display: block;
+  width: 100%; */
   height: auto;
 }
 

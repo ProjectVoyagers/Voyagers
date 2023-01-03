@@ -67,7 +67,7 @@ const CityMap = (props) => {
               id: countryId
             }
           })
-          // console.log(res.data.data)
+          console.log(res.data.data)
           setPins(res.data.data);
         } catch(err){
           console.log(err);
@@ -78,7 +78,9 @@ const CityMap = (props) => {
 
   return (
     <>
-          <div className="tile_map">
+    
+      <div className="tile_map">
+        <div className='left_side'>
             <div className="tile_map is-6 is-parent">
               <article className="tile_map is-child box">
               <div className="contain_map">
@@ -121,7 +123,8 @@ const CityMap = (props) => {
                       Go to itinerary
                   </button>        
               </article>
-            </div>
+          </div>
+          </div>
             <div className="tile_map is-parent">
               <article className="tile_map is-child">
               <div>
