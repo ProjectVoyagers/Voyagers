@@ -16,11 +16,11 @@ const Shop = ({ props }) => {
             <div className="shop_wrapper">
                 <h1 className="shop_header"> Shop </h1>
                 <CartProvider>
-                    <div className='container-fluid'>
+                    <div className='shop_container-fluid'>
                         <div className="nav-content">
                             
                         </div>
-                        <div className="container py-4">
+                        <div className="shop_container py-4">
                             <div className="row">
                                 {data.products.map((item, index) => {
                                     return (

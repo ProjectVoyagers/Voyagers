@@ -6,7 +6,7 @@ import Video from '../../Assets/maldivesVideo.mp4'
 
 const Hero = (props) => {
     return (
-        <div className='hero'>
+        <div className='voyagers_hero'>
             <video autoPlay loop muted id='video1'>
                 <source src={Video} type='video/mp4' />
             </video>

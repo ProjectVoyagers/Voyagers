@@ -151,7 +151,7 @@ const Register = () => {
                   <p class="help is-danger">{msg}</p>
                 </div>
                 <div className="field mt-5">
-                  <button className="button is-success is-fullwidth">
+                  <button className="button is-success">
                     Register
                   </button>
                 </div>

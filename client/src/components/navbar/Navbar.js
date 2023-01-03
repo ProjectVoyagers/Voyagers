@@ -6,7 +6,6 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 import { Link } from 'react-scroll'
-// import image from '../../../public/logo.png'
 import './NavbarStyles.css'
 import { NavLink } from 'react-router-dom'
 

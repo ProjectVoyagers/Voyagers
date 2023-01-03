@@ -1,76 +1,78 @@
-.hero {
-    width: 100%;
-    height: 100%;
-    color: #fff;
-    position: relative;
-}
-
-.overlay1 {
-    background-color: rgba(0, 0, 0, 0.1);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-#video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-.hero .content1 {
-    position: absolute;
-    top: 5%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    width: 64%;
-    margin: auto;
-    padding: 1rem;
-    left: 18%;
-}
-
-.form1 {
-    display: flex;
-    background-color: #ffffffcc;
-    color: #000;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #ccc;
-    padding: 4px;
-    border-radius: 8px;
-    max-width: 300px;
-    max-height: 70px;
-    width: 100%;
-    margin: 2rem auto;
-}
-
-.form1 input[type=text] {
-    border: transparent;
-    background-color: transparent;
-    width: auto;
-    font-size: 1.2rem;
-    font-family: 'Poppins',sans-serif;
-}
-
-.form1 input[type=text]:focus {
-    outline: none;
-    position: relative;
-}
-
-.form1 .searchButton{
-    position: relative;
-    right: 0;
-}
-
-@media screen and (max-width: 940px) {
-    .form1 input[type=text] {
-        max-width: 275px;
+@layer voyagers_hero_layer{
+    .voyagers_hero {
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        position: relative;
     }
-
+    
+    .overlay1 {
+        background-color: rgba(0, 0, 0, 0.1);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    
+    #video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    
+    .voyagers_hero .content1 {
+        position: absolute;
+        top: 5%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        width: 64%;
+        margin: auto;
+        padding: 1rem;
+        left: 18%;
+    }
+    
+    .form1 {
+        display: flex;
+        background-color: #ffffffcc;
+        color: #000;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 4px;
+        border-radius: 8px;
+        max-width: 300px;
+        max-height: 40px;
+        width: 100%;
+        margin: 2rem auto;
+    }
+    
+    .form1 input[type=text] {
+        border: transparent;
+        background-color: transparent;
+        width: auto;
+        font-size: 1.2rem;
+        font-family: 'Poppins',sans-serif;
+    }
+    
+    .form1 input[type=text]:focus {
+        outline: none;
+        position: relative;
+    }
+    
+    .form1 .searchButton{
+        position: relative;
+        margin-right: 0;
+    }
+    
+    @media screen and (max-width: 940px) {
+        .form1 input[type=text] {
+            max-width: 25px;
+        }
+    
+    }
 }

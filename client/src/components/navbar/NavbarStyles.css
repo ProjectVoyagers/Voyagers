@@ -17,17 +17,19 @@
 }
 .logo{
     padding-left: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     height: 34px;
     width: 200px;
     font-weight: 600;
+    cursor: pointer;
+
 }
 
 .logo .logo_title{
     top: 35%;
     position: absolute;
     width: 120px;
-    left: 55px;
+    left: 65px;
 }
 
 .navbar-bg1 {
@@ -37,9 +39,9 @@
 .nav-menu1 {
     position: absolute;
     display: flex;
-    font-size: 2rem;
+    font-size: 1.4rem;
     margin-top: 25px;
-    margin-left: 33%;
+    margin-left: 25%;
 }
 
 .navbar_links {
@@ -61,7 +63,7 @@
     height: 34px;
 }
 .icon1 {
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
 }
 

@@ -12,7 +12,7 @@ const Login = () => {
   useEffect(()=>{
     // check logged in user
     if(localStorage.getItem("logged-in-user")) {
-      navigate("/");
+      navigate("/user");
     }
   });
 
@@ -42,6 +42,7 @@ const Login = () => {
   };
 
   return (
+    <div className="voyagers_login">
     <section className="hero has-background-grey-light is-fullheight is-fullwidth">
       <div className="hero-body">
         <div className="container">
@@ -77,8 +78,8 @@ const Login = () => {
                   <p>Don't have an account?</p>
                   <a href="register">Sign Up</a>
                 </div>
-                <div className="field mt-5">
-                  <button className="button is-success is-fullwidth">
+                <div className="field mt-3">
+                  <button className="button is-success ">
                     Login
                   </button>
                 </div>
@@ -90,7 +91,8 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+      </div>
   );
 };
 

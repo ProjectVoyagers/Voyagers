@@ -1,244 +1,246 @@
-/* @import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"; */
-@import './bootstrap-3.3.7-dist/css/bootstrap.min.css';
-.itinerary_wrapper {
-  font-size: 62.5%;
-  background: #86e7f0;
-}
-
-.itn_attr {
-  text-decoration: none;
-}
-
-.itn_header {
-  font-size: 2.3rem;
-  font-weight: 500;
-  margin-top: auto;
-  /* margin: 0; */
-  font-family: "Libre Baskerville", serif;
-  color: #545454;
-}
-
-::-moz-selection {
-  color: #092539;
-  background: #dfa903;
-}
-
-::selection {
-  color: #092539;
-  background: #dfa903;
-}
-
-.white-stripe {
-  background: #fff;
-  text-align: center;
-  padding: 25px 0;
-  margin-top: 80px;
-}
-.white-stripe p {
-  margin-bottom: 0;
-}
-
-.white-stripe.arrow {
-  position: relative;
-}
-.white-stripe.arrow::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #fff;
-  clear: both;
-  margin-left: -20px;
-  z-index: 10;  
-}
-
-.timeline1 {
-  position: relative;
-  padding: 100px 0;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-}
-
-.itn_row {
-  /* height: 100px; */
-  margin-bottom: 50px;
-}
-
-@media only screen and (min-width: 768px) {
-  .timeline1 itn_row {
-    margin-bottom: 30px;
+  /* @import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"; */
+@layer voyagers_itinerary{
+  @import './bootstrap-3.3.7-dist/css/bootstrap.min.css';
+  .itinerary_wrapper {
+    font-size: 62.5%;
+    background: #86e7f0;
   }
-}
-.timeline1::before {
-  /* this is the vertical line */
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin-left: -2px;
-  height: 100%;
-  width: 3px;
-  background: #dddddd;
-  z-index: -2;
-}
-.timeline1 .country-block {
-  padding: 50px 50px;
-  font-size: 3rem;
-  margin-bottom: 60px;
-  text-transform: uppercase;
-  color: #fff;
-  background: rgba(84, 84, 84, 0.6);
-  -moz-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.timeline1 .country-block .itn_attr {
-  content: "";
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  -moz-transition: background-size 0.3s;
-  -webkit-transition: background-size 0.3s;
-  transition: background-size 0.3s;
-}
-.timeline1 .country-block i.jp {
-  background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/japan-small.jpg");
-}
-.timeline1 .country-block i.vt {
-  background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/vietnam-small.jpg");
-}
-.timeline1 .country-block i.cb {
-  background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/cambodia-small.jpg");
-}
-.timeline1 .country-block i.th {
-  background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/thailand-small.jpg");
-}
-.timeline1 .country-block i.ml {
-  background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/malaysia-small.jpg");
-}
-.timeline1 .country-block i.in {
-  background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/indonesia-small.jpg");
-}
-.timeline1 .country-block i.gr {
-  background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/greece-small.jpg");
-}
-@media only screen and (min-width: 768px) {
-  .timeline1 .country-block {
-    width: 48%;
-    margin-right: 2%;
+
+  .itn_attr {
+    text-decoration: none;
   }
-  .timeline1 .country-block::before, .timeline .country-block::after {
+
+  .itn_header {
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin-top: auto;
+    /* margin: 0; */
+    font-family: "Libre Baskerville", serif;
+    color: #545454;
+  }
+
+  ::-moz-selection {
+    color: #092539;
+    background: #dfa903;
+  }
+
+  ::selection {
+    color: #092539;
+    background: #dfa903;
+  }
+
+  .white-stripe {
+    background: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 80px;
+  }
+  .white-stripe p {
+    margin-bottom: 0;
+  }
+
+  .white-stripe.arrow {
+    position: relative;
+  }
+  .white-stripe.arrow::after {
     content: "";
     position: absolute;
-    right: -1px;
-    height: 50%;
-    padding-left: 3%;
-    background: #f2f2f2;
-    -ms-transform-origin: 100% 0;
-    -webkit-transform-origin: 100% 0;
-    transform-origin: 100% 0;
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fff;
+    clear: both;
+    margin-left: -20px;
+    z-index: 10;  
   }
-  .timeline1 .country-block::before {
-    bottom: 50%;
-    -ms-transform: skewY(45deg);
-    -webkit-transform: skewY(45deg);
-    transform: skewY(45deg);
+
+  .timeline1 {
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
   }
-  .timeline1 .country-block::after {
-    top: 50%;
-    -ms-transform: skewY(-45deg);
-    -webkit-transform: skewY(-45deg);
-    transform: skewY(-45deg);
+
+  .itn_row {
+    /* height: 100px; */
+    margin-bottom: 50px;
   }
-  .timeline1 .country-block.reverse {
-    margin-left: 2%;
-    margin-right: 0;
+
+  @media only screen and (min-width: 768px) {
+    .timeline1 itn_row {
+      margin-bottom: 30px;
+    }
   }
-  .timeline1 .country-block.reverse::before, .timeline1 .country-block.reverse::after {
-    left: -1px;
-    right: auto;
-    -ms-transform-origin: 0 100%;
-    -webkit-transform-origin: 0 100%;
-    transform-origin: 0 100%;
-  }
-  .timeline1 .country-block.reverse::before {
-    bottom: 50%;
-    -ms-transform: skewY(-45deg);
-    -webkit-transform: skewY(-45deg);
-    transform: skewY(-45deg);
-  }
-  .timeline1 .country-block.reverse::after {
-    top: 50%;
-    -ms-transform: skewY(45deg);
-    -webkit-transform: skewY(45deg);
-    transform: skewY(45deg);
-  }
-}
-.timeline1 a:hover, .timeline1 a:focus {
-  text-decoration: none;
-}
-.timeline1 a:hover .country-block {
-  background: rgba(9, 37, 57, 0.7);
-  color: #dfa903;
-}
-.timeline1 a:hover .country-block i {
-  background-size: 110%;
-}
-.timeline1 .date-block > div {
-  position: relative;
-  font-family: "Libre Baskerville", serif;
-  font-size: large;
-  background-color: #fff;
-  padding: 10px 30px 10px 30px;
-  border: 2px solid #7d7d7d;
-  display: inline-block;
-  margin-top: 15px;
-}
-@media only screen and (min-width: 768px) {
-  .timeline1 .date-block > div {
-    margin-top: 50px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .timeline1 .date-block::before {
+  .timeline1::before {
+    /* this is the vertical line */
     content: "";
     position: absolute;
-    top: 60px;
-    left: -10px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 4px solid #7d7d7d;
-    background: #f2f2f2;
-    box-shadow: 0 0 0 5px #f2f2f2;
-    z-index: 10;
-  }
-  .timeline1 .date-block::after {
-    content: "";
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 50%;
-    height: 3px;
+    top: 0;
+    left: 50%;
+    margin-left: -2px;
+    height: 100%;
+    width: 3px;
     background: #dddddd;
+    z-index: -2;
+  }
+  .timeline1 .country-block {
+    padding: 50px 50px;
+    font-size: 3rem;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(84, 84, 84, 0.6);
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .timeline1 .country-block .itn_attr {
+    content: "";
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
+    -moz-transition: background-size 0.3s;
+    -webkit-transition: background-size 0.3s;
+    transition: background-size 0.3s;
   }
-  .timeline1 .date-block.reverse::before {
-    right: -10px;
-    left: auto;
+  .timeline1 .country-block i.jp {
+    background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/japan-small.jpg");
   }
-  .timeline1 .date-block.reverse::after {
-    right: 0;
-    left: auto;
+  .timeline1 .country-block i.vt {
+    background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/vietnam-small.jpg");
+  }
+  .timeline1 .country-block i.cb {
+    background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/cambodia-small.jpg");
+  }
+  .timeline1 .country-block i.th {
+    background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/thailand-small.jpg");
+  }
+  .timeline1 .country-block i.ml {
+    background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/malaysia-small.jpg");
+  }
+  .timeline1 .country-block i.in {
+    background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/indonesia-small.jpg");
+  }
+  .timeline1 .country-block i.gr {
+    background-image: url("http://asia.vasilis-tsirimokos.com/img/banners/greece-small.jpg");
+  }
+  @media only screen and (min-width: 768px) {
+    .timeline1 .country-block {
+      width: 48%;
+      margin-right: 2%;
+    }
+    .timeline1 .country-block::before, .timeline .country-block::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      height: 50%;
+      padding-left: 3%;
+      background: #f2f2f2;
+      -ms-transform-origin: 100% 0;
+      -webkit-transform-origin: 100% 0;
+      transform-origin: 100% 0;
+    }
+    .timeline1 .country-block::before {
+      bottom: 50%;
+      -ms-transform: skewY(45deg);
+      -webkit-transform: skewY(45deg);
+      transform: skewY(45deg);
+    }
+    .timeline1 .country-block::after {
+      top: 50%;
+      -ms-transform: skewY(-45deg);
+      -webkit-transform: skewY(-45deg);
+      transform: skewY(-45deg);
+    }
+    .timeline1 .country-block.reverse {
+      margin-left: 2%;
+      margin-right: 0;
+    }
+    .timeline1 .country-block.reverse::before, .timeline1 .country-block.reverse::after {
+      left: -1px;
+      right: auto;
+      -ms-transform-origin: 0 100%;
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+    }
+    .timeline1 .country-block.reverse::before {
+      bottom: 50%;
+      -ms-transform: skewY(-45deg);
+      -webkit-transform: skewY(-45deg);
+      transform: skewY(-45deg);
+    }
+    .timeline1 .country-block.reverse::after {
+      top: 50%;
+      -ms-transform: skewY(45deg);
+      -webkit-transform: skewY(45deg);
+      transform: skewY(45deg);
+    }
+  }
+  .timeline1 a:hover, .timeline1 a:focus {
+    text-decoration: none;
+  }
+  .timeline1 a:hover .country-block {
+    background: rgba(9, 37, 57, 0.7);
+    color: #dfa903;
+  }
+  .timeline1 a:hover .country-block i {
+    background-size: 110%;
+  }
+  .timeline1 .date-block > div {
+    position: relative;
+    font-family: "Libre Baskerville", serif;
+    font-size: large;
+    background-color: #fff;
+    padding: 10px 30px 10px 30px;
+    border: 2px solid #7d7d7d;
+    display: inline-block;
+    margin-top: 15px;
+  }
+  @media only screen and (min-width: 768px) {
+    .timeline1 .date-block > div {
+      margin-top: 50px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .timeline1 .date-block::before {
+      content: "";
+      position: absolute;
+      top: 60px;
+      left: -10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 4px solid #7d7d7d;
+      background: #f2f2f2;
+      box-shadow: 0 0 0 5px #f2f2f2;
+      z-index: 10;
+    }
+    .timeline1 .date-block::after {
+      content: "";
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 50%;
+      height: 3px;
+      background: #dddddd;
+      z-index: -1;
+    }
+    .timeline1 .date-block.reverse::before {
+      right: -10px;
+      left: auto;
+    }
+    .timeline1 .date-block.reverse::after {
+      right: 0;
+      left: auto;
+    }
   }
 }

@@ -30,7 +30,7 @@ const CityList = () => {
         <>
         <Section>
         <div className="title">
-        <h2 style={{"margin-top": "4rem"}}>Destinations</h2>
+        <h1 style={{"margin-top": "80px "}}>Destinations</h1>
       </div>
           <div className='destinations'>        
             {allCities.map(city => (
