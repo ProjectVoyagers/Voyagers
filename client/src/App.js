@@ -34,7 +34,7 @@ const App = (props) => {
           <Route exact path="/" element={<LandingPage />}> </Route>
           <Route exact path="/login" element={<Login />}> </Route>
           <Route path="/register" element={<Register />}> </Route>
-          {/* <Route path="/travelPackages" element={<Packages />}> </Route>
+          <Route path="/travelPackages" element={<Packages />}> </Route>
           <Route path="/travelPkgDesc" element={<TravelPkgDesc />}> </Route>
           <Route exact path="/shop" element={<Shop />}> </Route>        
           <Route exact path="/cart" element={<Checkout />}> </Route> 
@@ -44,7 +44,7 @@ const App = (props) => {
 
           <Route path="/cities" element={<AllCities />}> </Route>
           <Route exact path="/city" element={<CityMap />}> </Route>
-          <Route exact path="/itinerary" element={<Itinerary />}> </Route> */}
+          <Route exact path="/itinerary" element={<Itinerary />}> </Route>
 
         </Routes>
         

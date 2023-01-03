@@ -14,7 +14,7 @@ const Shop = ({ props }) => {
     return (
         <>
             <div className="shop_wrapper">
-                <h1 className="shop_header"> Shop </h1>
+                <h2 className="shop_header"> Shop </h2>
                 <CartProvider>
                     <div className='shop_container-fluid'>
                         <div className="nav-content">
