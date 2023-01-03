@@ -12,8 +12,8 @@ const Hero = (props) => {
             </video>
             <div className="overlay1"></div>
             <div className="content1">
-                <h1 style={{color:'white'}}>Travel anywhere you want, anytime!!</h1>
-                <h2 style={{color:'white'}}>Top Locations Worldwide</h2>
+                <h2 style={{color:'white'}}>Travel anywhere you want, anytime!!</h2>
+                <h3 style={{color:'white'}}>Top Locations Worldwide</h3>
                 <form className="form1">
                     <div>
                         <input type="text" placeholder='Search Destinations' />
