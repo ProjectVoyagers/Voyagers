@@ -17,8 +17,9 @@ import {
 function User() {
   return (
     <>
+      <div className="user_wrapper01">
       <Container fluid>
-        <Row>
+        <Row >
           <Col md="8">
             <Card>
               <Card.Header>
@@ -31,7 +32,7 @@ function User() {
                       <Form.Group>
                         <label>Username</label>
                         <Form.Control
-                          defaultValue="michael23"
+                          defaultValue="rakinrkz"
                           placeholder="Username"
                           type="text"
                         ></Form.Control>
@@ -39,11 +40,11 @@ function User() {
                     </Col>
                     <Col className="pl-1" md="4">
                       <Form.Group>
-                        <label htmlFor="exampleInputEmail1">
+                        <label htmlFor="rakinuzzaman@gmail.com">
                           Email address
                         </label>
                         <Form.Control
-                          placeholder="Email"
+                          placeholder="rakinuzzaman@gmail.com"
                           type="email"
                         ></Form.Control>
                       </Form.Group>
@@ -54,7 +55,7 @@ function User() {
                       <Form.Group>
                         <label>First Name</label>
                         <Form.Control
-                          defaultValue="Mike"
+                          defaultValue="Rakinuzzaman"
                           placeholder="Company"
                           type="text"
                         ></Form.Control>
@@ -64,7 +65,7 @@ function User() {
                       <Form.Group>
                         <label>Last Name</label>
                         <Form.Control
-                          defaultValue="Andrew"
+                          defaultValue="AKM"
                           placeholder="Last Name"
                           type="text"
                         ></Form.Control>
@@ -76,7 +77,7 @@ function User() {
                       <Form.Group>
                         <label>Address</label>
                         <Form.Control
-                          defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                          defaultValue="Dhaka"
                           placeholder="Home Address"
                           type="text"
                         ></Form.Control>
@@ -88,7 +89,7 @@ function User() {
                       <Form.Group>
                         <label>City</label>
                         <Form.Control
-                          defaultValue="Mike"
+                          defaultValue="Dhaka"
                           placeholder="City"
                           type="text"
                         ></Form.Control>
@@ -98,7 +99,7 @@ function User() {
                       <Form.Group>
                         <label>Country</label>
                         <Form.Control
-                          defaultValue="Andrew"
+                          defaultValue="Bangladesh"
                           placeholder="Country"
                           type="text"
                         ></Form.Control>
@@ -129,7 +130,8 @@ function User() {
           </Col>
           
         </Row>
-      </Container>
+        </Container>
+        </div>
     </>
   );
 }

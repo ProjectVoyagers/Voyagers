@@ -51,8 +51,7 @@ class TravelPkgDesc extends React.Component{
       const {products, index} = this.state;
       return (
         <>
-          <Navbar />
-          <div className="app">
+          <div className="pkg_app">
         {
           products.map(item =>(
             <div className="details" key={item._id}>
